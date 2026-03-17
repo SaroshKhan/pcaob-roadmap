@@ -145,25 +145,39 @@ export default function YearPanel({ year, index }: YearPanelProps) {
               {year.genAICapabilities.map((cap, i) => (
                 <div
                   key={i}
-                  className="bg-white border rounded-xl overflow-hidden transition-all shadow-sm"
-                  style={{ borderColor: expandedGenAI === i ? year.color + '40' : '#16365C10' }}
+                  className="bg-white border rounded-xl overflow-hidden transition-all shadow-sm group/cap cursor-pointer"
+                  style={{
+                    borderColor: expandedGenAI === i ? year.color + '40' : '#16365C10',
+                    boxShadow: expandedGenAI === i ? `0 0 0 1px ${year.color}20` : undefined,
+                  }}
+                  onClick={() => setExpandedGenAI(expandedGenAI === i ? null : i)}
                 >
-                  <button
-                    onClick={() => setExpandedGenAI(expandedGenAI === i ? null : i)}
-                    className="w-full flex items-center justify-between p-5 text-left hover:bg-[#FAFAF8] transition-colors"
+                  <div
+                    className="w-full flex items-center justify-between p-5 text-left group-hover/cap:bg-[#FAFAF8] transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: year.color + '10' }}>
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center transition-colors" style={{ backgroundColor: year.color + '10' }}>
                         <Brain className="w-4 h-4 flex-shrink-0" style={{ color: year.color }} />
                       </div>
-                      <span className="font-semibold text-sm text-[#16365C]">{cap.name}</span>
+                      <div className="flex flex-col">
+                        <span className="font-semibold text-sm text-[#16365C]">{cap.name}</span>
+                        {expandedGenAI !== i && (
+                          <span className="text-[10px] text-[#16365C]/35 mt-0.5 group-hover/cap:text-[#16365C]/50 transition-colors">Click to view details</span>
+                        )}
+                      </div>
                     </div>
-                    {expandedGenAI === i ? (
-                      <ChevronDown className="w-4 h-4 text-[#16365C]/40" />
-                    ) : (
-                      <ChevronRight className="w-4 h-4 text-[#16365C]/40" />
-                    )}
-                  </button>
+                    <div className="flex items-center gap-2">
+                      {expandedGenAI !== i && (
+                        <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded-full transition-colors" style={{ backgroundColor: year.color + '08', color: year.color + '60' }}>Details</span>
+                      )}
+                      <motion.div
+                        animate={{ rotate: expandedGenAI === i ? 90 : 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ChevronRight className="w-4 h-4 text-[#16365C]/30 group-hover/cap:text-[#16365C]/60 transition-colors" />
+                      </motion.div>
+                    </div>
+                  </div>
                   <AnimatePresence>
                     {expandedGenAI === i && (
                       <motion.div
@@ -201,6 +215,10 @@ export default function YearPanel({ year, index }: YearPanelProps) {
                       </motion.div>
                     )}
                   </AnimatePresence>
+                  {/* Bottom expand hint bar when collapsed */}
+                  {expandedGenAI !== i && (
+                    <div className="h-0.5 w-full transition-all duration-300" style={{ background: `linear-gradient(90deg, transparent, ${year.color}15, transparent)` }} />
+                  )}
                 </div>
               ))}
             </div>
