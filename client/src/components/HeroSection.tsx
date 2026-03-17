@@ -73,7 +73,7 @@ export default function HeroSection() {
                 <div>
                   <p className="text-[#B8860B] font-semibold text-sm mb-1.5">No Surprise Funding Model</p>
                   <p className="text-[#16365C]/60 text-sm leading-relaxed">
-                    Every budget increase is gated by demonstrated value. Gate A (end of 2026) and
+                    Budget increases are gated by demonstrated value. Gate A (end of 2026) and
                     Gate B (end of 2027) provide structured decision points where leadership can
                     scale, hold, or narrow the investment based on evidence, not projections.
                   </p>
@@ -88,7 +88,7 @@ export default function HeroSection() {
             >
               <div>
                 <p className="text-[10px] font-mono text-[#16365C]/35 uppercase tracking-wider mb-1">Three-Year Envelope</p>
-                <p className="font-mono text-2xl font-bold text-[#16365C]">$7.9M — $10.7M</p>
+                <p className="font-mono text-2xl font-bold text-[#16365C]">$9.2M — $12.7M</p>
               </div>
               <div className="w-px h-10 bg-[#16365C]/10" />
               <div>
@@ -124,7 +124,7 @@ export default function HeroSection() {
                 year: 'Year 2',
                 label: 'Scale and Integrate',
                 window: 'January — December 2027',
-                budget: '$3.2M — $4M',
+                budget: '$3.5M — $5M',
                 detail: 'Enterprise Data Hub production, operational GenAI across divisions',
                 color: '#4A7C9B',
                 colorLight: '#EAF1F5',
@@ -134,7 +134,7 @@ export default function HeroSection() {
                 year: 'Year 3',
                 label: 'Optimize and Institutionalize',
                 window: 'January — December 2028',
-                budget: '$4M — $6M',
+                budget: '$5M — $7M',
                 detail: 'Predictive AI, agentic workflows, self-sustaining platform',
                 color: '#2D6A6A',
                 colorLight: '#E6F0F0',

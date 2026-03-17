@@ -119,7 +119,7 @@ export default function ScenarioSection() {
                       axisLine={{ stroke: '#16365C15' }}
                       tickLine={false}
                       tickFormatter={(v) => `$${v}M`}
-                      domain={[0, 7]}
+                      domain={[0, 8]}
                     />
                     <Tooltip
                       formatter={(value: number) => [`$${value}M`, '']}

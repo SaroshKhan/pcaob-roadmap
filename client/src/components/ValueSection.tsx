@@ -1,12 +1,11 @@
 // Design: Institutional Modernism | Section: Value Case
 // GenAI-heavy value narrative, metrics table, compounding returns
+// Dark blue section used as visual break — white text for contrast
 
 import { motion } from 'framer-motion';
 import { useInView } from '@/hooks/useInView';
 import { valueMetrics } from '@/lib/roadmapData';
 import { TrendingUp, Zap, Layers, Sparkles, ArrowRight } from 'lucide-react';
-
-const AI_GOV_IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/90961013/Tq827qtSGp9PRyxMktWeD6/ai-governance-UxrHcg2E2HduqAMr4goBMi.webp';
 
 const categoryIcons = {
   efficiency: Zap,
@@ -41,24 +40,18 @@ export default function ValueSection() {
           <p className="text-[#16365C]/70 text-lg font-serif leading-relaxed">
             The three-year arc delivers compounding value. Each year builds on the
             capabilities established in the prior year, creating an accelerating return on
-            investment that transforms how PCAOB executes its mission.
+            investment across the enterprise data program.
           </p>
         </motion.div>
 
-        {/* GenAI Value Narrative — full width card */}
+        {/* GenAI Value Narrative — dark blue visual break */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="relative rounded-2xl overflow-hidden mb-14"
+          className="rounded-2xl overflow-hidden mb-14 bg-[#16365C]"
         >
-          {/* Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0D2240] via-[#16365C] to-[#1a4a6a]" />
-          <div className="absolute inset-0 opacity-15">
-            <img src={AI_GOV_IMG} alt="" className="w-full h-full object-cover" />
-          </div>
-
-          <div className="relative p-8 md:p-10">
+          <div className="p-8 md:p-10">
             <div className="grid lg:grid-cols-5 gap-10">
               {/* Left narrative */}
               <div className="lg:col-span-3">
@@ -71,13 +64,13 @@ export default function ValueSection() {
                 <h3 className="text-2xl font-bold text-white mb-5 tracking-tight">
                   Responsible AI Adoption as a Force Multiplier
                 </h3>
-                <p className="text-white/75 font-serif leading-relaxed mb-5">
+                <p className="text-white/80 font-serif leading-relaxed mb-5">
                   PCAOB staff currently spend significant time on document assembly, regulatory
                   research, and manual data preparation. GenAI capabilities, deployed within a
                   controlled governance framework, can reclaim that time for the judgment-intensive
                   work that only experienced professionals can perform.
                 </p>
-                <p className="text-white/75 font-serif leading-relaxed mb-6">
+                <p className="text-white/80 font-serif leading-relaxed mb-6">
                   This is not about replacing staff. It is about enabling each inspector, investigator,
                   and analyst to operate with the data and analytical support that the complexity of
                   modern audit oversight demands.
@@ -85,24 +78,24 @@ export default function ValueSection() {
 
                 {/* Key stat callouts */}
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="bg-white/[0.06] border border-white/[0.10] rounded-lg p-4 text-center">
+                  <div className="bg-white/[0.08] border border-white/[0.12] rounded-lg p-4 text-center">
                     <p className="font-mono text-2xl font-bold text-[#B8860B]">11</p>
-                    <p className="text-[10px] text-white/40 font-mono uppercase mt-1">GenAI Capabilities</p>
+                    <p className="text-[10px] text-white/50 font-mono uppercase mt-1">GenAI Capabilities</p>
                   </div>
-                  <div className="bg-white/[0.06] border border-white/[0.10] rounded-lg p-4 text-center">
+                  <div className="bg-white/[0.08] border border-white/[0.12] rounded-lg p-4 text-center">
                     <p className="font-mono text-2xl font-bold text-white">3</p>
-                    <p className="text-[10px] text-white/40 font-mono uppercase mt-1">Maturity Stages</p>
+                    <p className="text-[10px] text-white/50 font-mono uppercase mt-1">Maturity Stages</p>
                   </div>
-                  <div className="bg-white/[0.06] border border-white/[0.10] rounded-lg p-4 text-center">
+                  <div className="bg-white/[0.08] border border-white/[0.12] rounded-lg p-4 text-center">
                     <p className="font-mono text-2xl font-bold text-white">3+</p>
-                    <p className="text-[10px] text-white/40 font-mono uppercase mt-1">Divisions Served</p>
+                    <p className="text-[10px] text-white/50 font-mono uppercase mt-1">Divisions Served</p>
                   </div>
                 </div>
               </div>
 
               {/* Right — GenAI progression */}
               <div className="lg:col-span-2 space-y-4">
-                <p className="text-[10px] font-mono text-white/40 uppercase tracking-wider mb-2">
+                <p className="text-[10px] font-mono text-white/50 uppercase tracking-wider mb-2">
                   GenAI Maturity Progression
                 </p>
                 {[
@@ -111,23 +104,26 @@ export default function ValueSection() {
                     stage: 'Pilot',
                     items: ['Inspection summarization', 'Regulatory research assistant', 'Data quality anomaly detection'],
                     color: '#16365C',
+                    bgColor: '#4A7C9B',
                   },
                   {
                     year: 'Year 2',
                     stage: 'Operational',
                     items: ['Cross-engagement pattern analysis', 'Enforcement case intelligence', 'Natural language data query'],
                     color: '#4A7C9B',
+                    bgColor: '#4A7C9B',
                   },
                   {
                     year: 'Year 3',
                     stage: 'Institutional',
                     items: ['Predictive audit risk modeling', 'Agentic workflow orchestration', 'GenAI-assisted standard setting'],
                     color: '#2D6A6A',
+                    bgColor: '#2D6A6A',
                   },
                 ].map((phase, i) => (
-                  <div key={i} className="bg-white/[0.06] border border-white/[0.10] rounded-xl p-4">
+                  <div key={i} className="bg-white/[0.08] border border-white/[0.12] rounded-xl p-4">
                     <div className="flex items-center gap-2 mb-3">
-                      <div className="w-6 h-6 rounded-md flex items-center justify-center" style={{ backgroundColor: phase.color }}>
+                      <div className="w-6 h-6 rounded-md flex items-center justify-center" style={{ backgroundColor: phase.bgColor }}>
                         <span className="text-white font-mono text-[10px] font-bold">{i + 1}</span>
                       </div>
                       <span className="text-white font-semibold text-sm">{phase.year}: {phase.stage}</span>
@@ -135,8 +131,8 @@ export default function ValueSection() {
                     <ul className="space-y-1.5">
                       {phase.items.map((item, j) => (
                         <li key={j} className="flex items-center gap-2">
-                          <ArrowRight className="w-3 h-3 text-[#B8860B]/60 flex-shrink-0" />
-                          <span className="text-white/60 text-xs">{item}</span>
+                          <ArrowRight className="w-3 h-3 text-[#B8860B]/70 flex-shrink-0" />
+                          <span className="text-white/70 text-xs">{item}</span>
                         </li>
                       ))}
                     </ul>

@@ -8,6 +8,16 @@ export function useInView(options?: IntersectionObserverInit) {
     const element = ref.current;
     if (!element) return;
 
+    // Check if element is already in viewport on mount (e.g. hash navigation)
+    const rect = element.getBoundingClientRect();
+    if (
+      rect.top < window.innerHeight &&
+      rect.bottom > 0
+    ) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -15,7 +25,7 @@ export function useInView(options?: IntersectionObserverInit) {
           observer.unobserve(element);
         }
       },
-      { threshold: 0.1, ...options }
+      { threshold: 0.05, rootMargin: '50px', ...options }
     );
 
     observer.observe(element);

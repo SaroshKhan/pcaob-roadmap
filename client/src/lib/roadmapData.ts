@@ -136,7 +136,7 @@ export const years: YearData[] = [
         description: 'Machine learning models that continuously monitor incoming data feeds for completeness, consistency, and timeliness anomalies before they propagate into downstream reporting.',
         valueCase: 'Prevents data quality issues from reaching Board-level reports, reducing manual reconciliation effort and increasing confidence in the data that supports oversight decisions.',
         dsReference: 'DS Tenet 2: Enterprise Data Hub and Integration',
-        marketContext: 'Data quality is a prerequisite for every advanced AI capability. Quality monitoring ensures that the fuel powering AI outputs meets the standard required for regulatory decisions.',
+        marketContext: 'Data quality is a prerequisite for every advanced AI capability. Quality monitoring provides the foundation for AI outputs to meet the standard required for regulatory decisions.',
       },
     ],
     deliverables: [
@@ -175,7 +175,7 @@ export const years: YearData[] = [
     subtitle: 'Expand the Enterprise Data Hub into production, operationalize GenAI across multiple divisions, build the ingestion factory, and begin transitioning from external expertise to internal capability.',
     color: '#4A7C9B',
     colorLight: '#EAF1F5',
-    budget: { base: '$3.2M', range: '$3.2M - $4M' },
+    budget: { base: '$3.5M', range: '$3.5M - $5M' },
     leadershipGets: [
       'A production Enterprise Data Hub that consolidates the most critical inspection, enforcement, and registration data into a single governed platform.',
       'GenAI capabilities expanded from champion pilots to operational tools deployed across at least three divisions, enabling measurable productivity gains in inspection, enforcement, and registration workflows.',
@@ -255,7 +255,7 @@ export const years: YearData[] = [
     subtitle: 'Mature the data platform into a self-sustaining institutional capability, expand GenAI into advanced use cases including predictive modeling and agentic workflows, and position PCAOB as a model for data-driven regulatory oversight.',
     color: '#2D6A6A',
     colorLight: '#E6F0F0',
-    budget: { base: '$4M', range: '$4M - $6M' },
+    budget: { base: '$5M', range: '$5M - $7M' },
     leadershipGets: [
       'A mature, self-sustaining enterprise data platform with product ownership model, service-level reporting, and continuous improvement loops.',
       'Advanced GenAI capabilities including predictive risk modeling that enables PCAOB to anticipate audit quality risks before they materialize in inspection findings.',
@@ -296,7 +296,7 @@ export const years: YearData[] = [
       {
         name: 'GenAI-Assisted Standard Setting',
         description: 'AI tools that analyze public comments, academic research, international standards, and historical rulemaking to support the standard-setting process with comprehensive, structured evidence synthesis.',
-        valueCase: 'Accelerates the standard-setting research phase and ensures that proposed standards are informed by the broadest possible evidence base, strengthening the quality and defensibility of PCAOB rulemaking.',
+        valueCase: 'Accelerates the standard-setting research phase and supports proposed standards being informed by a broader evidence base, strengthening the quality and defensibility of PCAOB rulemaking.',
         dsReference: 'DS Tenet 4: Workforce Enablement and Data Literacy',
         marketContext: 'The profession is evolving rapidly. Predictive models and agentic workflows represent the next frontier in regulatory technology, positioning PCAOB to lead rather than follow.',
       },
@@ -337,7 +337,7 @@ export const gates: GateData[] = [
     id: 'gate-a',
     name: 'Gate A',
     timing: 'End of Year 1 (December 2026)',
-    description: 'Evidence-based decision point on whether to scale the program from foundation to full integration. This gate ensures that no significant budget increase occurs without demonstrated value from the initial investment.',
+    description: 'Evidence-based decision point on whether to scale the program from foundation to full integration. This gate is designed so that no significant budget increase occurs without demonstrated value from the initial investment.',
     metrics: [
       { name: 'GenAI champion workflows in production', target: '2-3 workflows with documented cycle-time reduction', status: 'not-started' },
       { name: 'Enterprise Data Catalog adoption', target: 'Monthly active users and repeat usage exceed minimums', status: 'not-started' },
@@ -377,7 +377,7 @@ export const risks: RiskItem[] = [
     likelihood: 4,
     impact: 5,
     category: 'Financial',
-    mitigation: 'Structure the roadmap around decision gates that allow scaling, holding, or narrowing at each stage. Publish the three-year envelope now to prevent surprise requests. Maintain a base-case scenario that delivers value within the existing budget envelope. Frame all investments in terms of cost avoidance and mission efficiency rather than new spending.',
+    mitigation: 'The roadmap is structured around decision gates that allow scaling, holding, or narrowing at each stage. The three-year envelope is published to prevent surprise requests. A base-case scenario delivers value within the existing budget envelope. All investments are framed in terms of cost avoidance and mission efficiency.',
     owner: 'CIO and Budget Office',
   },
   {
@@ -386,7 +386,7 @@ export const risks: RiskItem[] = [
     likelihood: 4,
     impact: 4,
     category: 'Operational',
-    mitigation: 'Separate run and build capacity explicitly. Establish a formal intake process with triage rules. Protect dedicated capacity for strategic initiatives through monthly steering and a documented "stop doing" list. Define clear boundaries between roadmap deliverables and business-as-usual support.',
+    mitigation: 'Run and build capacity are separated explicitly. A formal intake process with triage rules is in place. Dedicated capacity for strategic initiatives is protected through monthly steering and a documented priority framework. Clear boundaries between roadmap deliverables and business-as-usual support are defined.',
     owner: 'Program Lead and Division Directors',
   },
   {
@@ -395,7 +395,7 @@ export const risks: RiskItem[] = [
     likelihood: 3,
     impact: 4,
     category: 'Technical',
-    mitigation: 'Default to "use existing stack" wherever possible. Conduct early technical feasibility assessments for all GenAI tooling within the PCAOB security perimeter. Identify approved cloud and on-premises options in the first 90 days. Maintain fallback approaches for each capability that do not depend on a single vendor or platform.',
+    mitigation: 'The default approach is to use the existing stack wherever possible. Early technical feasibility assessments for all GenAI tooling within the PCAOB security perimeter are planned. Approved cloud and on-premises options will be identified in the first 90 days. Fallback approaches for each capability that do not depend on a single vendor or platform are maintained.',
     owner: 'CTO and Security Team',
   },
   {
@@ -404,7 +404,7 @@ export const risks: RiskItem[] = [
     likelihood: 3,
     impact: 4,
     category: 'Security',
-    mitigation: 'Engage the security and IAM teams as partners from day one, not as a late-stage gate. Simplify persona models. Build purpose-based access patterns into the data architecture from the foundation layer. Establish an explicit access exception process. Align GenAI access controls with existing PCAOB data classification policies.',
+    mitigation: 'Security and IAM teams are engaged as partners from day one. Persona models are simplified. Purpose-based access patterns are built into the data architecture from the foundation layer. An explicit access exception process is established. GenAI access controls align with existing PCAOB data classification policies.',
     owner: 'CISO and Data Governance Council',
   },
   {
@@ -413,7 +413,7 @@ export const risks: RiskItem[] = [
     likelihood: 4,
     impact: 3,
     category: 'Data',
-    mitigation: 'Establish data contracts for priority products. Prioritize data quality assessment and remediation for the top 30 critical assets in Year 1. Establish automated quality monitoring before expanding the data catalog. Plan identifier harmonization as a Year 3 deliverable.',
+    mitigation: 'Data contracts for priority products are established. Data quality assessment and remediation for the top 30 critical assets is prioritized in Year 1. Automated quality monitoring is established before expanding the data catalog. Identifier harmonization is planned as a Year 3 deliverable.',
     owner: 'Data Stewards and Platform Team',
   },
   {
@@ -422,7 +422,7 @@ export const risks: RiskItem[] = [
     likelihood: 3,
     impact: 5,
     category: 'Organizational',
-    mitigation: 'Start with low-risk, high-visibility champion workflows that build confidence through demonstrated value. Maintain human-in-the-loop controls for all GenAI outputs. Develop clear evaluation rubrics with UAT thresholds. Require supervision steps, privacy and security reviews, and audit logs for every GenAI deployment.',
+    mitigation: 'The approach begins with low-risk, high-visibility champion workflows that build confidence through demonstrated value. Human-in-the-loop controls are maintained for all GenAI outputs. Clear evaluation rubrics with UAT thresholds are developed. Supervision steps, privacy and security reviews, and audit logs are required for every GenAI deployment.',
     owner: 'Program Lead and Division Champions',
   },
 ];
@@ -437,17 +437,17 @@ export const scenarios: ScenarioData[] = [
     description: 'Delivers the core roadmap within the planned budget envelope. Prioritizes governance foundation, GenAI champion workflows, and the Enterprise Data Hub. Achieves meaningful value while maintaining fiscal discipline consistent with SEC expectations for transparent, material investment management.',
     years: [
       { year: 2026, budget: 0.7, genAIMaturity: 'Pilot' },
-      { year: 2027, budget: 3.2, genAIMaturity: 'Operational' },
-      { year: 2028, budget: 4.0, genAIMaturity: 'Scaled' },
+      { year: 2027, budget: 3.5, genAIMaturity: 'Operational' },
+      { year: 2028, budget: 5.0, genAIMaturity: 'Scaled' },
     ],
   },
   {
     name: 'Accelerated Adoption',
-    description: 'Expands the scope to include additional GenAI use cases and faster platform buildout. Requires explicit gate approval and additional budget authorization. Delivers greater mission impact sooner but at higher investment levels. Includes the optional innovation sandbox model.',
+    description: 'Expands the scope to include additional GenAI use cases and faster platform buildout. Requires explicit gate approval and additional budget authorization. Delivers greater mission impact sooner but at higher investment levels.',
     years: [
       { year: 2026, budget: 0.7, genAIMaturity: 'Pilot' },
-      { year: 2027, budget: 4.0, genAIMaturity: 'Advanced' },
-      { year: 2028, budget: 6.0, genAIMaturity: 'Institutional' },
+      { year: 2027, budget: 5.0, genAIMaturity: 'Advanced' },
+      { year: 2028, budget: 7.0, genAIMaturity: 'Institutional' },
     ],
   },
 ];

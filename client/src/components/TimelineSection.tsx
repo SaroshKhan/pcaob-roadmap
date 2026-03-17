@@ -88,7 +88,7 @@ export default function TimelineSection() {
                   <div className="bg-white border border-[#4A7C9B]/10 rounded-xl p-5 w-full group-hover:border-[#4A7C9B]/25 group-hover:shadow-lg transition-all">
                     <p className="font-mono text-[10px] text-[#4A7C9B]/40 mb-1.5 tracking-wider">JAN — DEC 2027</p>
                     <p className="font-semibold text-sm text-[#4A7C9B] mb-2">Scale</p>
-                    <p className="font-mono text-xl font-bold text-[#4A7C9B]">$3.2M — $4M</p>
+                    <p className="font-mono text-xl font-bold text-[#4A7C9B]">$3.5M — $5M</p>
                   </div>
                 </div>
               </button>
@@ -118,7 +118,7 @@ export default function TimelineSection() {
                   <div className="bg-white border border-[#2D6A6A]/10 rounded-xl p-5 w-full group-hover:border-[#2D6A6A]/25 group-hover:shadow-lg transition-all">
                     <p className="font-mono text-[10px] text-[#2D6A6A]/40 mb-1.5 tracking-wider">JAN — DEC 2028</p>
                     <p className="font-semibold text-sm text-[#2D6A6A] mb-2">Institutionalize</p>
-                    <p className="font-mono text-xl font-bold text-[#2D6A6A]">$4M — $6M</p>
+                    <p className="font-mono text-xl font-bold text-[#2D6A6A]">$5M — $7M</p>
                   </div>
                 </div>
               </button>
@@ -129,12 +129,12 @@ export default function TimelineSection() {
           <div className="mt-14 flex flex-wrap justify-center gap-10">
             <div className="text-center">
               <p className="font-mono text-[10px] text-[#16365C]/40 uppercase tracking-wider mb-1.5">Three-Year Total (Base)</p>
-              <p className="font-mono text-3xl font-bold text-[#16365C]">$7.9M</p>
+              <p className="font-mono text-3xl font-bold text-[#16365C]">$9.2M</p>
             </div>
             <div className="w-px h-12 bg-[#16365C]/10 hidden md:block" />
             <div className="text-center">
               <p className="font-mono text-[10px] text-[#16365C]/40 uppercase tracking-wider mb-1.5">Three-Year Total (Accelerated)</p>
-              <p className="font-mono text-3xl font-bold text-[#16365C]">$10.7M</p>
+              <p className="font-mono text-3xl font-bold text-[#16365C]">$12.7M</p>
             </div>
             <div className="w-px h-12 bg-[#16365C]/10 hidden md:block" />
             <div className="text-center">

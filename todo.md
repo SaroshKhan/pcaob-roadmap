@@ -1,14 +1,12 @@
-# Changes Requested
+# Changes Requested V3
 
-- [ ] Hero title: "PCAOB Enterprise Data Roadmap -- A Three Year Vision Arc"
-- [ ] Year 2 budget: $3.2M - $4M
-- [ ] Year 3 budget: $4M - $6M
-- [ ] Remove Leadership Signals / Context section (no quotes)
-- [ ] Remove dark background colors and fancy background graphics
-- [ ] Fix grey-on-dark-blue legibility issues
-- [ ] Remove ALL FTE/team size references everywhere
-- [ ] Scenario section: clustered column chart (both scenarios same y-axis)
-- [ ] Scenario section: add text box showing higher spend = higher value sooner (specific)
-- [ ] Scenario section: remove team size chart
-- [ ] Remove CIO Presentation Script and everything below it
-- [ ] Remove footer sections
+- [ ] Remove dark background pattern/image from GenAI section (the compass/gear SVG background)
+- [ ] Keep dark blue bg in some places for visual breaks but ensure white text on dark bg
+- [ ] Fix all text contrast issues — white text on dark, dark text on light
+- [ ] Update Year 2 budget from $3.2M-$4M to $3.5M-$5M everywhere
+- [ ] Update Year 3 budget from $4M-$6M to $5M-$7M everywhere
+- [ ] Recalculate three-year envelope totals (base: $0.7+$3.5+$5=$9.2M, accelerated: $0.7+$5+$7=$12.7M)
+- [ ] Replace "Risks Are Identified, Not Ignored" with "Proactive Risk Management Anchored in Enterprise Priorities"
+- [ ] Replace salesy risk tone with measured professional language throughout
+- [ ] Audit all copy for negative/salesy/dramatic tone and replace with measured professional language
+- [ ] Update scenario section budget numbers to match new ranges

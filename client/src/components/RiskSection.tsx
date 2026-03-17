@@ -39,12 +39,12 @@ export default function RiskSection() {
               Risk Management
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-[#16365C] tracking-tight mb-4">
-              Risks Are Identified, Not Ignored
+              Proactive Risk Management Anchored in Enterprise Priorities
             </h2>
             <p className="text-[#16365C]/70 text-lg font-serif leading-relaxed">
-              Every significant risk has a defined mitigation strategy and an accountable owner.
-              The decision-gate model itself is the primary risk control, ensuring that investment
-              scales only when evidence supports the next step.
+              Significant risks have been identified and have an associated mitigation strategy
+              as well as an accountable owner. The decision-gate model provides a structured risk
+              control, with investment scaling tied to evidence at each stage.
             </p>
           </div>
 
