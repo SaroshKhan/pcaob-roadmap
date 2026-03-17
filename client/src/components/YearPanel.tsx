@@ -1,5 +1,6 @@
 // Design: Institutional Modernism | Component: Year Panel
 // Expandable accordions, month-by-month milestones, GenAI market context
+// No FTE or staffing references
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,7 +9,7 @@ import type { YearData } from '@/lib/roadmapData';
 import {
   ChevronDown, ChevronRight, CheckCircle2, Brain,
   Database, BarChart3, BookOpen, Sparkles, Calendar,
-  FileText, TrendingUp, Globe
+  FileText, Globe
 } from 'lucide-react';
 
 const categoryIcons = {
@@ -74,22 +75,13 @@ export default function YearPanel({ year, index }: YearPanelProps) {
             </div>
           </div>
 
-          {/* Budget and staffing strip */}
+          {/* Budget and capability strip - NO staffing */}
           <div className="flex flex-wrap gap-4 mb-10">
             <div className="bg-white border rounded-xl px-6 py-4 shadow-sm" style={{ borderColor: year.color + '20' }}>
               <p className="text-[10px] text-[#16365C]/50 font-mono uppercase tracking-wider mb-1">Investment</p>
               <p className="font-mono text-2xl font-bold" style={{ color: year.color }}>
                 {year.budget.range || year.budget.base}
               </p>
-            </div>
-            <div className="bg-white border rounded-xl px-6 py-4 shadow-sm" style={{ borderColor: year.color + '20' }}>
-              <p className="text-[10px] text-[#16365C]/50 font-mono uppercase tracking-wider mb-1">Team</p>
-              <p className="font-mono text-2xl font-bold" style={{ color: year.color }}>
-                {year.staffing.base}
-              </p>
-              {year.staffing.range && (
-                <p className="text-[10px] text-[#16365C]/50 mt-0.5">{year.staffing.range}</p>
-              )}
             </div>
             <div className="bg-white border rounded-xl px-6 py-4 shadow-sm" style={{ borderColor: year.color + '20' }}>
               <p className="text-[10px] text-[#16365C]/50 font-mono uppercase tracking-wider mb-1">GenAI Capabilities</p>
@@ -193,7 +185,7 @@ export default function YearPanel({ year, index }: YearPanelProps) {
                             </div>
                           </div>
                           {cap.marketContext && (
-                            <div className="mt-4 bg-[#16365C]/3 rounded-lg p-4">
+                            <div className="mt-4 bg-[#16365C]/[0.03] rounded-lg p-4">
                               <div className="flex items-center gap-2 mb-2">
                                 <Globe className="w-3.5 h-3.5 text-[#4A7C9B]" />
                                 <p className="text-[10px] font-semibold text-[#4A7C9B] uppercase tracking-wider">Market Context</p>
@@ -245,7 +237,6 @@ export default function YearPanel({ year, index }: YearPanelProps) {
                   <div className="relative pl-6 border-l-2 ml-3 space-y-0" style={{ borderColor: year.color + '30' }}>
                     {year.milestones.map((ms, i) => (
                       <div key={i} className="relative pb-6 last:pb-0">
-                        {/* Timeline dot */}
                         <div
                           className="absolute -left-[calc(1.5rem+5px)] w-2.5 h-2.5 rounded-full border-2 bg-white"
                           style={{ borderColor: year.color }}

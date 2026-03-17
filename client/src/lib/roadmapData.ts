@@ -2,6 +2,7 @@
 // Design: Institutional Modernism | Focus: GenAI value creation traced to DS
 // Style: No ampersands, no contractions, no pie charts, no ending sentences with prepositions
 // No contractor names, logos, or third-party branding
+// No FTE references anywhere
 
 export interface YearData {
   id: string;
@@ -12,7 +13,6 @@ export interface YearData {
   color: string;
   colorLight: string;
   budget: { base: string; range?: string };
-  staffing: { base: string; range?: string };
   leadershipGets: string[];
   mustBeTrue: string[];
   genAICapabilities: GenAICapability[];
@@ -73,7 +73,6 @@ export interface ScenarioData {
   years: {
     year: number;
     budget: number;
-    staffing: number;
     genAIMaturity: string;
   }[];
 }
@@ -87,52 +86,6 @@ export interface ValueMetric {
 }
 
 export type StakeholderView = 'board' | 'ot' | 'mission';
-
-export interface ContextStat {
-  label: string;
-  value: string;
-  source: string;
-}
-
-// ============================================================
-// MARKET CONTEXT - enriched from research
-// ============================================================
-
-export const contextStats: ContextStat[] = [
-  { label: 'PCAOB 2026 Budget', value: '$362.1M', source: 'SEC-approved, 9.4% decrease from 2025' },
-  { label: 'OT Budget (2026)', value: '$16.3M', source: 'IT and capital expenditures, down from $18.7M' },
-  { label: 'Inspection Deficiency Rate', value: '39%', source: '2024 aggregate, down from 46% in 2023' },
-  { label: 'Big Four Deficiency Rate', value: '20%', source: '2024, down from 26% in 2023' },
-  { label: 'Federal Legacy System Costs', value: '$754M/yr', source: 'GAO: 11 most critical legacy systems' },
-  { label: 'Federal IT Spend', value: '$100B+/yr', source: '80% on operations and maintenance' },
-];
-
-export const industryQuotes = [
-  {
-    quote: 'Data is the fuel that powers AI, and the quality of that fuel determines the quality of the output.',
-    author: 'Christina Ho',
-    role: 'PCAOB Board Member',
-    context: 'November 2025 Speech',
-  },
-  {
-    quote: 'The PCAOB is at the dawn of a new era where the PCAOB will take a newfound and long overdue leadership role in promoting innovation.',
-    author: 'Christina Ho',
-    role: 'PCAOB Board Member',
-    context: 'September 2025 Speech',
-  },
-  {
-    quote: 'The AI Task Force will empower staff across the SEC with AI-enabled tools and systems to responsibly augment capacity, accelerate innovation, and enhance efficiency.',
-    author: 'Paul S. Atkins',
-    role: 'SEC Chairman',
-    context: 'August 2025 Press Release',
-  },
-  {
-    quote: 'Data serves as the lifeblood for agentic AI. Without timely, trusted, and context-rich data, even the most advanced AI agents are flying blind.',
-    author: 'Booz Allen Hamilton',
-    role: 'Federal AI Advisory',
-    context: '2025 Report on Agentic AI in Government',
-  },
-];
 
 // ============================================================
 // YEAR DATA
@@ -148,7 +101,6 @@ export const years: YearData[] = [
     color: '#16365C',
     colorLight: '#E8EEF4',
     budget: { base: '$0.7M' },
-    staffing: { base: '2.5 FTE', range: 'plus senior reachback' },
     leadershipGets: [
       'A unified data governance framework with enforceable cross-division decision rights that replaces ad hoc data requests with structured, repeatable access patterns.',
       'Two to three GenAI champion workflows in production, each demonstrating measurable cycle-time reduction in inspection or enforcement support.',
@@ -184,7 +136,7 @@ export const years: YearData[] = [
         description: 'Machine learning models that continuously monitor incoming data feeds for completeness, consistency, and timeliness anomalies before they propagate into downstream reporting.',
         valueCase: 'Prevents data quality issues from reaching Board-level reports, reducing manual reconciliation effort and increasing confidence in the data that supports oversight decisions.',
         dsReference: 'DS Tenet 2: Enterprise Data Hub and Integration',
-        marketContext: 'Christina Ho emphasized that "data is the fuel that powers AI, and the quality of that fuel determines the quality of the output." Quality monitoring is a prerequisite for every advanced capability.',
+        marketContext: 'Data quality is a prerequisite for every advanced AI capability. Quality monitoring ensures that the fuel powering AI outputs meets the standard required for regulatory decisions.',
       },
     ],
     deliverables: [
@@ -205,7 +157,7 @@ export const years: YearData[] = [
       { period: 'August 2026', title: 'GenAI Win One', deliverables: 'Pilot 1 delivered with evaluation rubric, supervision steps, and UAT package', qualityCheck: 'Cycle-time baseline versus post measured' },
       { period: 'September 2026', title: 'GenAI Win Two', deliverables: 'Pilot 2 delivered with reuse patterns and updated controls documentation', qualityCheck: 'UAT satisfaction and safety validation' },
       { period: 'October 2026', title: 'Institutionalize Adoption', deliverables: 'Training micro-modules; office hours; catalog editorial cadence locked for Q4', qualityCheck: 'Repeat usage increases; contributions rise' },
-      { period: 'November 2026', title: 'Scale Case', deliverables: 'Year 2 project slate; Gate A scoring against metrics; budget envelope narrative', qualityCheck: 'Gate A readiness documented' },
+      { period: 'November 2026', title: 'Scale Case', deliverables: 'Year 2 project slate; Gate A scoring against metrics; budget envelope narrative', qualityCheck: 'Gate A evidence package assembled' },
       { period: 'December 2026', title: 'Close and Decide', deliverables: 'Year 1 outcomes package; Year 2 mobilization plan (conditional); risk register refresh', qualityCheck: 'Formal go or no-go for Year 2' },
     ],
     dsTraceability: [
@@ -223,11 +175,10 @@ export const years: YearData[] = [
     subtitle: 'Expand the Enterprise Data Hub into production, operationalize GenAI across multiple divisions, build the ingestion factory, and begin transitioning from external expertise to internal capability.',
     color: '#4A7C9B',
     colorLight: '#EAF1F5',
-    budget: { base: '$2.8M', range: '$2.8M - $3.8M' },
-    staffing: { base: '7-9 FTE' },
+    budget: { base: '$3.2M', range: '$3.2M - $4M' },
     leadershipGets: [
       'A production Enterprise Data Hub that consolidates the most critical inspection, enforcement, and registration data into a single governed platform.',
-      'GenAI capabilities expanded from champion pilots to operational tools used by 50 or more staff across at least three divisions.',
+      'GenAI capabilities expanded from champion pilots to operational tools deployed across at least three divisions, enabling measurable productivity gains in inspection, enforcement, and registration workflows.',
       'An enterprise ingestion factory with standardized onboarding, monitoring, and reconciliation for new data sources.',
       'Automated data pipelines that eliminate manual data preparation for the top 10 recurring Board and Congressional reporting requirements.',
       'A self-service analytics layer that enables division directors to answer their own data questions without submitting IT requests.',
@@ -235,7 +186,7 @@ export const years: YearData[] = [
       'A Gate B recommendation with quantified ROI evidence for the Year 3 investment.',
     ],
     mustBeTrue: [
-      'Gate A approval is granted with authorization to scale staffing and platform investment.',
+      'Gate A approval is granted with authorization to scale platform investment.',
       'The Enterprise Data Hub production environment passes PCAOB security and compliance review.',
       'At least three divisions have designated data stewards participating in the governance council.',
       'GenAI champion workflows from Year 1 have demonstrated measurable, documented value.',
@@ -304,13 +255,12 @@ export const years: YearData[] = [
     subtitle: 'Mature the data platform into a self-sustaining institutional capability, expand GenAI into advanced use cases including predictive modeling and agentic workflows, and position PCAOB as a model for data-driven regulatory oversight.',
     color: '#2D6A6A',
     colorLight: '#E6F0F0',
-    budget: { base: '$3.8M', range: '$3.8M - $5.0M' },
-    staffing: { base: '10-14 FTE' },
+    budget: { base: '$4M', range: '$4M - $6M' },
     leadershipGets: [
       'A mature, self-sustaining enterprise data platform with product ownership model, service-level reporting, and continuous improvement loops.',
       'Advanced GenAI capabilities including predictive risk modeling that enables PCAOB to anticipate audit quality risks before they materialize in inspection findings.',
       'Agentic AI workflows that execute multi-step analytical processes autonomously, with human oversight at decision points.',
-      'A fully internal data and AI operations team, with external support limited to specialized advisory and innovation scouting.',
+      'A fully internal data and AI operations capability, with external support limited to specialized advisory and innovation scouting.',
       'Quantified mission impact: measurable improvements in inspection coverage, enforcement case velocity, and Board reporting timeliness.',
       'Core identifier harmonization and data quality monitoring across enterprise data assets.',
       'A sustainable operating model with clear cost trajectories that the budget office can plan around with confidence.',
@@ -333,7 +283,7 @@ export const years: YearData[] = [
       {
         name: 'Agentic Workflow Orchestration',
         description: 'Multi-step AI agents that can execute complex analytical workflows autonomously, such as pulling data from multiple sources, running quality checks, performing analysis, and drafting preliminary findings for human review.',
-        valueCase: 'Represents the next evolution beyond single-task GenAI, enabling PCAOB to handle increasing oversight complexity without proportional staffing increases.',
+        valueCase: 'Represents the next evolution beyond single-task GenAI, enabling PCAOB to handle increasing oversight complexity without proportional increases in manual effort.',
         dsReference: 'DS Tenet 2: Enterprise Data Hub and Integration',
         marketContext: 'Booz Allen Hamilton reports that agentic AI can "act, adapt, and collaborate to execute multistep processes across enterprise data and systems." KPMG is already deploying AI agents in its Clara platform for expense vouching and liability searches.',
       },
@@ -348,7 +298,7 @@ export const years: YearData[] = [
         description: 'AI tools that analyze public comments, academic research, international standards, and historical rulemaking to support the standard-setting process with comprehensive, structured evidence synthesis.',
         valueCase: 'Accelerates the standard-setting research phase and ensures that proposed standards are informed by the broadest possible evidence base, strengthening the quality and defensibility of PCAOB rulemaking.',
         dsReference: 'DS Tenet 4: Workforce Enablement and Data Literacy',
-        marketContext: 'Christina Ho stated: "If our profession adapts quickly, we will lead. We can define the standards, shape the frameworks, and help ensure that AI systems used in financial reporting and auditing are trustworthy, transparent, and accountable."',
+        marketContext: 'The profession is evolving rapidly. Predictive models and agentic workflows represent the next frontier in regulatory technology, positioning PCAOB to lead rather than follow.',
       },
     ],
     deliverables: [
@@ -396,7 +346,7 @@ export const gates: GateData[] = [
       { name: 'Security and IAM review completion', target: 'All GenAI tooling reviewed and approved', status: 'not-started' },
       { name: 'Stakeholder satisfaction', target: 'Positive feedback from at least 2 division directors on value delivered', status: 'not-started' },
     ],
-    recommendedAction: 'Scale: Authorize Year 2 staffing (7-9 FTE) and platform investment based on demonstrated value.',
+    recommendedAction: 'Scale: Authorize Year 2 investment and platform expansion based on demonstrated value.',
   },
   {
     id: 'gate-b',
@@ -406,13 +356,13 @@ export const gates: GateData[] = [
     metrics: [
       { name: 'Enterprise Data Hub adoption', target: 'Production platform serving 3 or more divisions', status: 'not-started' },
       { name: 'Enterprise reuse', target: 'At least two mission units reuse same governed assets, definitions, and patterns', status: 'not-started' },
-      { name: 'GenAI operational reach', target: '50 or more staff using GenAI tools across 3 or more divisions', status: 'not-started' },
+      { name: 'GenAI operational reach', target: 'GenAI tools deployed and operational across 3 or more divisions with documented productivity gains', status: 'not-started' },
       { name: 'Ingestion factory repeatability', target: 'New source onboarding is predictable and measurable', status: 'not-started' },
       { name: 'Automated reporting coverage', target: 'Top 10 recurring reports automated', status: 'not-started' },
       { name: 'Internal capability readiness', target: 'Knowledge transfer plan on track, internal staff operating core functions', status: 'not-started' },
       { name: 'Quantified ROI', target: 'Documented cost avoidance or efficiency gains exceeding Year 2 investment', status: 'not-started' },
     ],
-    recommendedAction: 'Scale: Authorize Year 3 investment (10-14 FTE) for advanced AI capabilities and full institutionalization.',
+    recommendedAction: 'Scale: Authorize Year 3 investment for advanced AI capabilities and full institutionalization.',
   },
 ];
 
@@ -486,18 +436,18 @@ export const scenarios: ScenarioData[] = [
     name: 'Base Case',
     description: 'Delivers the core roadmap within the planned budget envelope. Prioritizes governance foundation, GenAI champion workflows, and the Enterprise Data Hub. Achieves meaningful value while maintaining fiscal discipline consistent with SEC expectations for transparent, material investment management.',
     years: [
-      { year: 2026, budget: 0.7, staffing: 2.5, genAIMaturity: 'Pilot' },
-      { year: 2027, budget: 2.8, staffing: 7, genAIMaturity: 'Operational' },
-      { year: 2028, budget: 3.8, staffing: 10, genAIMaturity: 'Scaled' },
+      { year: 2026, budget: 0.7, genAIMaturity: 'Pilot' },
+      { year: 2027, budget: 3.2, genAIMaturity: 'Operational' },
+      { year: 2028, budget: 4.0, genAIMaturity: 'Scaled' },
     ],
   },
   {
     name: 'Accelerated Adoption',
-    description: 'Expands the scope to include additional GenAI use cases and faster platform buildout. Requires explicit gate approval and additional budget authorization. Delivers greater mission impact but at higher investment levels. Includes the optional innovation sandbox model.',
+    description: 'Expands the scope to include additional GenAI use cases and faster platform buildout. Requires explicit gate approval and additional budget authorization. Delivers greater mission impact sooner but at higher investment levels. Includes the optional innovation sandbox model.',
     years: [
-      { year: 2026, budget: 0.7, staffing: 2.5, genAIMaturity: 'Pilot' },
-      { year: 2027, budget: 3.8, staffing: 9, genAIMaturity: 'Advanced' },
-      { year: 2028, budget: 5.0, staffing: 14, genAIMaturity: 'Institutional' },
+      { year: 2026, budget: 0.7, genAIMaturity: 'Pilot' },
+      { year: 2027, budget: 4.0, genAIMaturity: 'Advanced' },
+      { year: 2028, budget: 6.0, genAIMaturity: 'Institutional' },
     ],
   },
 ];
@@ -545,25 +495,18 @@ export const valueMetrics: ValueMetric[] = [
   {
     label: 'GenAI Operational Reach',
     year1: '2-3 champion workflows',
-    year2: '50+ staff across 3+ divisions',
+    year2: 'Operational across 3+ divisions',
     year3: 'Organization-wide with agentic capabilities',
     category: 'capability',
   },
 ];
 
 // ============================================================
-// CIO PRESENTATION SCRIPT
-// ============================================================
-
-export const cioScript = `This roadmap provides a Board-level, three-year view now to prevent outyear funding surprises and to support disciplined oversight. The plan is intentionally staged: Year 1 invests $0.7 million over nine months with a small delivery pod (2.5 FTE plus senior reachback) to establish enterprise governance, activate the catalog as the front door to trusted data through visualization-heavy narratives, stabilize the data engineering run lane, and deliver two to three controlled GenAI wins for named champions. Scaling in 2027 and 2028 is authorized only if decision gates are met, using objective metrics for governance throughput, catalog adoption, pipeline reliability, and validated GenAI outcomes under supervised controls — consistent with SEC expectations for fiscal discipline and transparency about material investments and PCAOB stated posture on GenAI supervision and data privacy and security risks.`;
-
-// ============================================================
-// NAVIGATION
+// NAVIGATION (updated: removed context, removed footer-related)
 // ============================================================
 
 export const sections = [
   { id: 'hero', label: 'Overview' },
-  { id: 'context', label: 'Context' },
   { id: 'value', label: 'Value Case' },
   { id: 'timeline', label: 'Roadmap' },
   { id: 'year-1', label: 'Year 1' },

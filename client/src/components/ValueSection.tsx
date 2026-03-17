@@ -94,8 +94,8 @@ export default function ValueSection() {
                     <p className="text-[10px] text-white/40 font-mono uppercase mt-1">Maturity Stages</p>
                   </div>
                   <div className="bg-white/[0.06] border border-white/[0.10] rounded-lg p-4 text-center">
-                    <p className="font-mono text-2xl font-bold text-white">50+</p>
-                    <p className="text-[10px] text-white/40 font-mono uppercase mt-1">Staff by Year 2</p>
+                    <p className="font-mono text-2xl font-bold text-white">3+</p>
+                    <p className="text-[10px] text-white/40 font-mono uppercase mt-1">Divisions Served</p>
                   </div>
                 </div>
               </div>

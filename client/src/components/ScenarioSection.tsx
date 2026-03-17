@@ -1,46 +1,46 @@
-// Design: Institutional Modernism | Section: Investment Scenarios
-// Dark bg, scenario toggle, recharts bar charts, summary metrics
+// Design: Institutional Modernism | Section: Scenarios
+// Clustered column chart comparing two scenarios, value realization text box
+// No team size chart, no FTE references
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from '@/hooks/useInView';
 import { scenarios } from '@/lib/roadmapData';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { TrendingUp, ArrowRight, Zap } from 'lucide-react';
 
-const DATA_FLOW_IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/90961013/Tq827qtSGp9PRyxMktWeD6/data-flow-abstract-WTLVLHXdiS3MWc7GvGfQsJ.webp';
+const COLORS = {
+  base: '#16365C',
+  accelerated: '#4A7C9B',
+};
 
 export default function ScenarioSection() {
   const { ref, isVisible } = useInView();
-  const [activeScenario, setActiveScenario] = useState(0);
-  const scenario = scenarios[activeScenario];
 
-  const budgetData = scenario.years.map(y => ({
-    year: y.year.toString(),
-    budget: y.budget,
-  }));
+  // Build clustered data for the chart
+  const chartData = [
+    {
+      year: '2026',
+      'Base Case': scenarios[0].years[0].budget,
+      'Accelerated': scenarios[1].years[0].budget,
+    },
+    {
+      year: '2027',
+      'Base Case': scenarios[0].years[1].budget,
+      'Accelerated': scenarios[1].years[1].budget,
+    },
+    {
+      year: '2028',
+      'Base Case': scenarios[0].years[2].budget,
+      'Accelerated': scenarios[1].years[2].budget,
+    },
+  ];
 
-  const staffingData = scenario.years.map(y => ({
-    year: y.year.toString(),
-    staffing: y.staffing,
-  }));
-
-  const yearColors = ['#16365C', '#4A7C9B', '#2D6A6A'];
-  const totalBudget = scenario.years.reduce((sum, y) => sum + y.budget, 0);
+  const baseTotal = scenarios[0].years.reduce((sum, y) => sum + y.budget, 0);
+  const accelTotal = scenarios[1].years.reduce((sum, y) => sum + y.budget, 0);
 
   return (
-    <section id="scenarios" className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0A1628' }}>
-      <div className="absolute inset-0 opacity-10">
-        <img src={DATA_FLOW_IMG} alt="" className="w-full h-full object-cover" />
-      </div>
-      <div
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
-        }}
-      />
-
-      <div className="container relative" ref={ref}>
+    <section id="scenarios" className="py-20 bg-white">
+      <div className="container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -50,156 +50,176 @@ export default function ScenarioSection() {
             <p className="text-[#B8860B] font-mono text-xs tracking-widest uppercase mb-3">
               Investment Scenarios
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
-              Two Paths, One Commitment to Fiscal Discipline
+            <h2 className="text-3xl md:text-4xl font-bold text-[#16365C] tracking-tight mb-4">
+              Two Paths, One Commitment
             </h2>
-            <p className="text-white/55 text-lg font-serif leading-relaxed">
-              Both scenarios deliver meaningful value. The difference is pace and scope, not
-              fiscal responsibility. Each path is governed by the same decision gates.
+            <p className="text-[#16365C]/70 text-lg font-serif leading-relaxed">
+              Both scenarios share the same Year 1 foundation investment. The difference emerges
+              in Years 2 and 3, where the accelerated path delivers greater mission impact sooner
+              through expanded GenAI capabilities and faster platform buildout.
             </p>
           </div>
 
-          {/* Scenario toggle */}
-          <div className="flex gap-3 mb-10">
-            {scenarios.map((s, i) => (
-              <button
+          {/* Scenario descriptions */}
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            {scenarios.map((scenario, i) => (
+              <div
                 key={i}
-                onClick={() => setActiveScenario(i)}
-                className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all ${
-                  activeScenario === i
-                    ? 'bg-[#B8860B] text-white shadow-lg shadow-[#B8860B]/20'
-                    : 'bg-white/[0.06] text-white/50 border border-white/[0.10] hover:bg-white/[0.10]'
-                }`}
+                className="border rounded-xl p-6"
+                style={{
+                  borderColor: i === 0 ? COLORS.base + '20' : COLORS.accelerated + '20',
+                  backgroundColor: i === 0 ? '#FAFAF8' : '#F5F9FB',
+                }}
               >
-                {s.name}
-              </button>
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className="w-3 h-3 rounded-full"
+                    style={{ backgroundColor: i === 0 ? COLORS.base : COLORS.accelerated }}
+                  />
+                  <h3 className="font-bold text-[#16365C]">{scenario.name}</h3>
+                  <span
+                    className="font-mono text-sm font-bold ml-auto"
+                    style={{ color: i === 0 ? COLORS.base : COLORS.accelerated }}
+                  >
+                    ${i === 0 ? baseTotal.toFixed(1) : accelTotal.toFixed(1)}M
+                  </span>
+                </div>
+                <p className="text-sm text-[#16365C]/70 leading-relaxed mb-4">{scenario.description}</p>
+                <div className="flex gap-3">
+                  {scenario.years.map((y, j) => (
+                    <div key={j} className="flex-1 bg-white rounded-lg p-3 border border-[#16365C]/5 text-center">
+                      <p className="text-[10px] font-mono text-[#16365C]/40 mb-1">{y.year}</p>
+                      <p className="font-mono text-sm font-bold text-[#16365C]">${y.budget}M</p>
+                      <p className="text-[10px] text-[#16365C]/40 mt-0.5">{y.genAIMaturity}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
 
-          {/* Scenario description */}
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 mb-10 max-w-3xl">
-            <p className="text-white/65 text-sm leading-relaxed font-serif">{scenario.description}</p>
-          </div>
-
-          {/* Charts grid */}
-          <div className="grid lg:grid-cols-2 gap-6 mb-10">
-            {/* Budget chart */}
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-6">
-              <h3 className="text-white font-semibold text-sm mb-1">Annual Investment</h3>
-              <p className="text-white/30 text-[10px] font-mono uppercase tracking-wider mb-6">Millions USD</p>
-              <div style={{ width: '100%', height: 256, minWidth: 200 }}>
-                <ResponsiveContainer width="100%" height={256}>
-                  <BarChart data={budgetData} barSize={52}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
-                    <XAxis dataKey="year" stroke="rgba(255,255,255,0.25)" fontSize={12} fontFamily="JetBrains Mono" />
-                    <YAxis stroke="rgba(255,255,255,0.25)" fontSize={12} fontFamily="JetBrains Mono" tickFormatter={(v) => `$${v}M`} />
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: '#16365C',
-                        border: '1px solid rgba(255,255,255,0.12)',
-                        borderRadius: '10px',
-                        color: 'white',
-                        fontFamily: 'JetBrains Mono',
-                        fontSize: '12px',
-                      }}
-                      formatter={(value: number) => [`$${value}M`, 'Investment']}
+          {/* Clustered Column Chart + Value Realization Box */}
+          <div className="grid lg:grid-cols-3 gap-6 mb-10">
+            <div className="lg:col-span-2 bg-[#FAFAF8] border border-[#16365C]/8 rounded-xl p-6">
+              <h3 className="text-sm font-semibold text-[#16365C]/60 uppercase tracking-wider mb-6">
+                Annual Investment Comparison
+              </h3>
+              <div style={{ width: '100%', minHeight: '340px' }}>
+                <ResponsiveContainer width="100%" height={340}>
+                  <BarChart data={chartData} barGap={4} barCategoryGap="25%">
+                    <CartesianGrid strokeDasharray="3 3" stroke="#16365C10" />
+                    <XAxis
+                      dataKey="year"
+                      tick={{ fill: '#16365C80', fontSize: 12, fontFamily: 'JetBrains Mono, monospace' }}
+                      axisLine={{ stroke: '#16365C15' }}
+                      tickLine={false}
                     />
-                    <Bar dataKey="budget" radius={[6, 6, 0, 0]}>
-                      {budgetData.map((_, i) => (
-                        <Cell key={i} fill={yearColors[i]} />
-                      ))}
-                    </Bar>
+                    <YAxis
+                      tick={{ fill: '#16365C80', fontSize: 12, fontFamily: 'JetBrains Mono, monospace' }}
+                      axisLine={{ stroke: '#16365C15' }}
+                      tickLine={false}
+                      tickFormatter={(v) => `$${v}M`}
+                      domain={[0, 7]}
+                    />
+                    <Tooltip
+                      formatter={(value: number) => [`$${value}M`, '']}
+                      contentStyle={{
+                        backgroundColor: '#fff',
+                        border: '1px solid #16365C15',
+                        borderRadius: '8px',
+                        fontSize: '13px',
+                        fontFamily: 'JetBrains Mono, monospace',
+                      }}
+                    />
+                    <Legend
+                      wrapperStyle={{ fontSize: '12px', fontFamily: 'JetBrains Mono, monospace' }}
+                    />
+                    <Bar dataKey="Base Case" fill={COLORS.base} radius={[4, 4, 0, 0]} />
+                    <Bar dataKey="Accelerated" fill={COLORS.accelerated} radius={[4, 4, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
             </div>
 
-            {/* Staffing chart */}
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-6">
-              <h3 className="text-white font-semibold text-sm mb-1">Team Size</h3>
-              <p className="text-white/30 text-[10px] font-mono uppercase tracking-wider mb-6">Full-Time Equivalents</p>
-              <div style={{ width: '100%', height: 256, minWidth: 200 }}>
-                <ResponsiveContainer width="100%" height={256}>
-                  <BarChart data={staffingData} barSize={52}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
-                    <XAxis dataKey="year" stroke="rgba(255,255,255,0.25)" fontSize={12} fontFamily="JetBrains Mono" />
-                    <YAxis stroke="rgba(255,255,255,0.25)" fontSize={12} fontFamily="JetBrains Mono" />
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: '#16365C',
-                        border: '1px solid rgba(255,255,255,0.12)',
-                        borderRadius: '10px',
-                        color: 'white',
-                        fontFamily: 'JetBrains Mono',
-                        fontSize: '12px',
-                      }}
-                      formatter={(value: number) => [`${value} FTE`, 'Team']}
-                    />
-                    <Bar dataKey="staffing" radius={[6, 6, 0, 0]}>
-                      {staffingData.map((_, i) => (
-                        <Cell key={i} fill={yearColors[i]} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
+            {/* Value Realization Text Box */}
+            <div className="bg-gradient-to-br from-[#16365C] to-[#1a4a6a] rounded-xl p-6 text-white flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <TrendingUp className="w-5 h-5 text-[#B8860B]" />
+                  <h3 className="font-bold text-sm">Why the Accelerated Path Delivers More Value Sooner</h3>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Zap className="w-4 h-4 text-[#B8860B] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-sm font-semibold mb-1">GenAI Reaches Operational Scale in 2027</p>
+                      <p className="text-xs text-white/60 leading-relaxed">
+                        The additional investment in Year 2 expands GenAI from pilot workflows to
+                        operational tools across three or more divisions by mid-2027, rather than
+                        end-of-year. Cross-engagement pattern analysis and enforcement
+                        case intelligence become available six months earlier.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Zap className="w-4 h-4 text-[#B8860B] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-sm font-semibold mb-1">Predictive Risk Modeling Arrives in Early 2028</p>
+                      <p className="text-xs text-white/60 leading-relaxed">
+                        The Year 3 accelerated budget enables predictive audit risk modeling to
+                        reach production in Q1 2028 rather than Q3, giving PCAOB a full inspection
+                        cycle of data-driven selection before the 2028 annual report.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Zap className="w-4 h-4 text-[#B8860B] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-sm font-semibold mb-1">Compounding Returns on Earlier Investment</p>
+                      <p className="text-xs text-white/60 leading-relaxed">
+                        Every month of operational GenAI generates measurable efficiency gains.
+                        Accelerating the timeline by six months in Year 2 and three months in Year 3
+                        compounds into significantly greater cumulative value over the three-year arc.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 pt-4 border-t border-white/10">
+                <div className="flex items-center gap-2">
+                  <ArrowRight className="w-4 h-4 text-[#B8860B]" />
+                  <p className="text-xs text-white/50">
+                    The incremental ${(accelTotal - baseTotal).toFixed(1)}M over three years
+                    accelerates value realization by 6-9 months across all major capability areas.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Summary metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 text-center">
-              <p className="text-white/30 text-[10px] font-mono uppercase tracking-wider mb-2">Three-Year Total</p>
-              <p className="text-white font-mono text-2xl font-bold">${totalBudget.toFixed(1)}M</p>
-            </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 text-center">
-              <p className="text-white/30 text-[10px] font-mono uppercase tracking-wider mb-2">Peak Team Size</p>
-              <p className="text-white font-mono text-2xl font-bold">
-                {scenario.years[scenario.years.length - 1].staffing} FTE
-              </p>
-            </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 text-center">
-              <p className="text-white/30 text-[10px] font-mono uppercase tracking-wider mb-2">GenAI Maturity (Y3)</p>
-              <p className="text-white font-mono text-2xl font-bold">
-                {scenario.years[scenario.years.length - 1].genAIMaturity}
-              </p>
-            </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 text-center">
-              <p className="text-[#B8860B]/50 text-[10px] font-mono uppercase tracking-wider mb-2">Decision Gates</p>
-              <p className="text-[#B8860B] font-mono text-2xl font-bold">2</p>
-            </div>
-          </div>
-
-          {/* Year-by-year comparison table */}
-          <div className="overflow-x-auto rounded-xl border border-white/[0.08]">
+          {/* Summary comparison table */}
+          <div className="overflow-x-auto rounded-xl border border-[#16365C]/8">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="bg-white/[0.03]">
-                  <th className="text-left py-3.5 px-5 text-[10px] font-semibold text-white/30 uppercase tracking-wider font-mono">Year</th>
-                  <th className="text-left py-3.5 px-5 text-[10px] font-semibold text-white/30 uppercase tracking-wider font-mono">Investment</th>
-                  <th className="text-left py-3.5 px-5 text-[10px] font-semibold text-white/30 uppercase tracking-wider font-mono">Team</th>
-                  <th className="text-left py-3.5 px-5 text-[10px] font-semibold text-white/30 uppercase tracking-wider font-mono">GenAI Maturity</th>
-                  <th className="text-left py-3.5 px-5 text-[10px] font-semibold text-white/30 uppercase tracking-wider font-mono">Gate</th>
+                <tr className="bg-[#FAFAF8]">
+                  <th className="text-left py-3.5 px-5 text-[10px] font-semibold text-[#16365C]/50 uppercase tracking-wider">Dimension</th>
+                  <th className="text-left py-3.5 px-5 text-[10px] font-semibold uppercase tracking-wider" style={{ color: COLORS.base }}>Base Case</th>
+                  <th className="text-left py-3.5 px-5 text-[10px] font-semibold uppercase tracking-wider" style={{ color: COLORS.accelerated }}>Accelerated</th>
                 </tr>
               </thead>
               <tbody>
-                {scenario.years.map((y, i) => (
-                  <tr key={i} className="border-t border-white/[0.05]">
-                    <td className="py-3.5 px-5">
-                      <span className="font-mono text-sm font-semibold" style={{ color: yearColors[i] }}>
-                        {y.year}
-                      </span>
-                    </td>
-                    <td className="py-3.5 px-5 font-mono text-sm text-white">${y.budget}M</td>
-                    <td className="py-3.5 px-5 font-mono text-sm text-white">{y.staffing} FTE</td>
-                    <td className="py-3.5 px-5 text-sm text-white/65">{y.genAIMaturity}</td>
-                    <td className="py-3.5 px-5">
-                      {i < 2 && (
-                        <span className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full bg-[#B8860B]/12 text-[#B8860B]">
-                          Gate {i === 0 ? 'A' : 'B'}
-                        </span>
-                      )}
-                    </td>
+                {[
+                  { dim: 'Three-Year Total', base: `$${baseTotal.toFixed(1)}M`, accel: `$${accelTotal.toFixed(1)}M` },
+                  { dim: 'GenAI Operational by', base: 'Q4 2027', accel: 'Q2 2027' },
+                  { dim: 'Predictive Risk Model', base: 'Q3 2028', accel: 'Q1 2028' },
+                  { dim: 'Divisions Served by End of Year 2', base: '3', accel: '4-5' },
+                  { dim: 'Automated Reporting Coverage', base: 'Top 10 reports', accel: 'Top 15 reports + ad hoc' },
+                  { dim: 'Internal Capability Transition', base: 'Q4 2028', accel: 'Q3 2028' },
+                ].map((row, i) => (
+                  <tr key={i} className="border-t border-[#16365C]/5 hover:bg-[#16365C]/[0.02] transition-colors">
+                    <td className="py-3.5 px-5 text-sm font-medium text-[#16365C]">{row.dim}</td>
+                    <td className="py-3.5 px-5 text-sm text-[#16365C]/70">{row.base}</td>
+                    <td className="py-3.5 px-5 text-sm text-[#16365C]/70">{row.accel}</td>
                   </tr>
                 ))}
               </tbody>

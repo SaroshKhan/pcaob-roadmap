@@ -1,14 +1,12 @@
 // Design: Institutional Modernism | Section: Hero
-// Dark navy bg with topographic texture, gold accents, no-surprise ribbon
-// Uses CSS animations instead of framer-motion for reliable initial render
+// Light background, clean institutional look, no dark bg, no fancy graphics
+// No FTE references
 
 import { ArrowDown, Database, Brain, Shield, Landmark } from 'lucide-react';
 
-const HERO_BG = 'https://d2xsxph8kpxj0f.cloudfront.net/90961013/Tq827qtSGp9PRyxMktWeD6/hero-bg-fdjuCBU2Z5GkunwvKWRn7u.webp';
-
 export default function HeroSection() {
-  const scrollToContext = () => {
-    const el = document.getElementById('context');
+  const scrollToValue = () => {
+    const el = document.getElementById('value');
     if (el) {
       const top = el.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top, behavior: 'smooth' });
@@ -16,25 +14,17 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background layers */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[#0D2240]" />
-        <img
-          src={HERO_BG}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-overlay"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0D2240]/90 via-[#16365C]/70 to-[#1a4a6a]/80" />
-        {/* Subtle grid overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-      </div>
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-[#FAFAF8]">
+      {/* Subtle geometric pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: 'linear-gradient(#16365C 1px, transparent 1px), linear-gradient(90deg, #16365C 1px, transparent 1px)',
+          backgroundSize: '80px 80px',
+        }}
+      />
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#16365C] via-[#4A7C9B] to-[#2D6A6A]" />
 
       {/* Content */}
       <div className="relative container pt-28 pb-20">
@@ -51,16 +41,21 @@ export default function HeroSection() {
             </div>
 
             <h1
-              className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.08] tracking-tight mb-6 hero-fade-in"
+              className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#16365C] leading-[1.08] tracking-tight mb-3 hero-fade-in"
               style={{ animationDelay: '0.2s' }}
             >
-              Three-Year Enterprise Data
-              <br />
-              <span className="text-[#B8860B]">and AI Roadmap</span>
+              PCAOB Enterprise Data Roadmap
             </h1>
 
             <p
-              className="text-lg text-white/75 font-serif leading-relaxed max-w-2xl mb-10 hero-fade-in"
+              className="text-2xl md:text-3xl font-bold text-[#4A7C9B] tracking-tight mb-8 hero-fade-in"
+              style={{ animationDelay: '0.25s' }}
+            >
+              A Three Year Vision Arc
+            </p>
+
+            <p
+              className="text-lg text-[#16365C]/70 font-serif leading-relaxed max-w-2xl mb-10 hero-fade-in"
               style={{ animationDelay: '0.3s' }}
             >
               A structured, gate-controlled investment plan that transforms PCAOB data
@@ -70,14 +65,14 @@ export default function HeroSection() {
 
             {/* No surprise ribbon */}
             <div
-              className="bg-[#B8860B]/10 border border-[#B8860B]/25 rounded-xl px-6 py-5 max-w-2xl mb-10 hero-fade-in"
+              className="bg-[#B8860B]/5 border border-[#B8860B]/20 rounded-xl px-6 py-5 max-w-2xl mb-10 hero-fade-in"
               style={{ animationDelay: '0.4s' }}
             >
               <div className="flex items-start gap-4">
                 <div className="w-1 self-stretch bg-[#B8860B] rounded-full flex-shrink-0" />
                 <div>
                   <p className="text-[#B8860B] font-semibold text-sm mb-1.5">No Surprise Funding Model</p>
-                  <p className="text-white/65 text-sm leading-relaxed">
+                  <p className="text-[#16365C]/60 text-sm leading-relaxed">
                     Every budget increase is gated by demonstrated value. Gate A (end of 2026) and
                     Gate B (end of 2027) provide structured decision points where leadership can
                     scale, hold, or narrow the investment based on evidence, not projections.
@@ -92,18 +87,18 @@ export default function HeroSection() {
               style={{ animationDelay: '0.5s' }}
             >
               <div>
-                <p className="text-[10px] font-mono text-white/35 uppercase tracking-wider mb-1">Three-Year Envelope</p>
-                <p className="font-mono text-2xl font-bold text-white">$7.3M — $9.5M</p>
+                <p className="text-[10px] font-mono text-[#16365C]/35 uppercase tracking-wider mb-1">Three-Year Envelope</p>
+                <p className="font-mono text-2xl font-bold text-[#16365C]">$7.9M — $10.7M</p>
               </div>
-              <div className="w-px h-10 bg-white/15" />
+              <div className="w-px h-10 bg-[#16365C]/10" />
               <div>
-                <p className="text-[10px] font-mono text-white/35 uppercase tracking-wider mb-1">Decision Gates</p>
+                <p className="text-[10px] font-mono text-[#16365C]/35 uppercase tracking-wider mb-1">Decision Gates</p>
                 <p className="font-mono text-2xl font-bold text-[#B8860B]">2</p>
               </div>
-              <div className="w-px h-10 bg-white/15" />
+              <div className="w-px h-10 bg-[#16365C]/10" />
               <div>
-                <p className="text-[10px] font-mono text-white/35 uppercase tracking-wider mb-1">GenAI Capabilities</p>
-                <p className="font-mono text-2xl font-bold text-white">11</p>
+                <p className="text-[10px] font-mono text-[#16365C]/35 uppercase tracking-wider mb-1">GenAI Capabilities</p>
+                <p className="font-mono text-2xl font-bold text-[#16365C]">11</p>
               </div>
             </div>
           </div>
@@ -120,29 +115,29 @@ export default function HeroSection() {
                 label: 'Foundation and First Wins',
                 window: 'April — December 2026',
                 budget: '$0.7M',
-                team: '2.5 FTE',
                 detail: 'Governance backbone, catalog activation, first GenAI champion workflows',
                 color: '#16365C',
+                colorLight: '#E8EEF4',
               },
               {
                 icon: Brain,
                 year: 'Year 2',
                 label: 'Scale and Integrate',
                 window: 'January — December 2027',
-                budget: '$2.8 — $3.8M',
-                team: '7-9 FTE',
+                budget: '$3.2M — $4M',
                 detail: 'Enterprise Data Hub production, operational GenAI across divisions',
                 color: '#4A7C9B',
+                colorLight: '#EAF1F5',
               },
               {
                 icon: Shield,
                 year: 'Year 3',
                 label: 'Optimize and Institutionalize',
                 window: 'January — December 2028',
-                budget: '$3.8 — $5.0M',
-                team: '10-14 FTE',
+                budget: '$4M — $6M',
                 detail: 'Predictive AI, agentic workflows, self-sustaining platform',
                 color: '#2D6A6A',
+                colorLight: '#E6F0F0',
               },
             ].map((card, i) => (
               <button
@@ -154,7 +149,8 @@ export default function HeroSection() {
                     window.scrollTo({ top, behavior: 'smooth' });
                   }
                 }}
-                className="w-full text-left bg-white/[0.06] backdrop-blur-sm border border-white/[0.12] rounded-xl p-5 hover:bg-white/[0.10] hover:border-white/[0.20] transition-all group"
+                className="w-full text-left bg-white border rounded-xl p-5 hover:shadow-lg transition-all group"
+                style={{ borderColor: card.color + '15' }}
               >
                 <div className="flex items-start gap-4">
                   <div
@@ -165,15 +161,12 @@ export default function HeroSection() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="font-mono text-xs font-bold text-white/90">{card.year}</span>
-                      <span className="text-[10px] font-mono text-white/35">{card.window}</span>
+                      <span className="font-mono text-xs font-bold" style={{ color: card.color }}>{card.year}</span>
+                      <span className="text-[10px] font-mono text-[#16365C]/35">{card.window}</span>
                     </div>
-                    <p className="text-white font-semibold text-sm mb-1.5">{card.label}</p>
-                    <p className="text-white/50 text-xs leading-relaxed mb-3">{card.detail}</p>
-                    <div className="flex items-center gap-4">
-                      <span className="font-mono text-sm font-bold" style={{ color: '#B8860B' }}>{card.budget}</span>
-                      <span className="text-[10px] font-mono text-white/35">{card.team}</span>
-                    </div>
+                    <p className="text-[#16365C] font-semibold text-sm mb-1.5">{card.label}</p>
+                    <p className="text-[#16365C]/50 text-xs leading-relaxed mb-3">{card.detail}</p>
+                    <span className="font-mono text-sm font-bold" style={{ color: '#B8860B' }}>{card.budget}</span>
                   </div>
                 </div>
               </button>
@@ -181,11 +174,11 @@ export default function HeroSection() {
 
             {/* Gate indicators */}
             <div className="flex gap-3 pt-2">
-              <div className="flex-1 bg-[#B8860B]/10 border border-[#B8860B]/20 rounded-lg px-4 py-3 text-center">
+              <div className="flex-1 bg-[#B8860B]/5 border border-[#B8860B]/15 rounded-lg px-4 py-3 text-center">
                 <p className="text-[10px] font-mono text-[#B8860B]/60 uppercase tracking-wider mb-0.5">Gate A</p>
                 <p className="text-xs font-semibold text-[#B8860B]">Dec 2026</p>
               </div>
-              <div className="flex-1 bg-[#B8860B]/10 border border-[#B8860B]/20 rounded-lg px-4 py-3 text-center">
+              <div className="flex-1 bg-[#B8860B]/5 border border-[#B8860B]/15 rounded-lg px-4 py-3 text-center">
                 <p className="text-[10px] font-mono text-[#B8860B]/60 uppercase tracking-wider mb-0.5">Gate B</p>
                 <p className="text-xs font-semibold text-[#B8860B]">Dec 2027</p>
               </div>
@@ -195,10 +188,10 @@ export default function HeroSection() {
 
         {/* Scroll indicator */}
         <button
-          onClick={scrollToContext}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 hover:text-white/60 transition-colors hero-fade-in"
+          onClick={scrollToValue}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#16365C]/30 hover:text-[#16365C]/60 transition-colors hero-fade-in"
           style={{ animationDelay: '1.2s' }}
-          aria-label="Scroll to context"
+          aria-label="Scroll to value case"
         >
           <ArrowDown className="w-5 h-5 animate-bounce" />
         </button>

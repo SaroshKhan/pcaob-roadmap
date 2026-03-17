@@ -1,10 +1,9 @@
 // Design: Institutional Modernism | Section: Timeline
 // Horizontal gated timeline, warm bg, year cards with gate diamonds
+// No FTE references
 
 import { motion } from 'framer-motion';
 import { useInView } from '@/hooks/useInView';
-
-const YEAR_PROGRESSION = 'https://d2xsxph8kpxj0f.cloudfront.net/90961013/Tq827qtSGp9PRyxMktWeD6/year-progression-TozMXHuUpnbzj8maVPssLa.webp';
 
 export default function TimelineSection() {
   const { ref, isVisible } = useInView();
@@ -19,10 +18,6 @@ export default function TimelineSection() {
 
   return (
     <section id="timeline" className="py-20 bg-[#FAFAF8] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.04]">
-        <img src={YEAR_PROGRESSION} alt="" className="w-full h-full object-cover" />
-      </div>
-
       <div className="container relative" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,7 +59,6 @@ export default function TimelineSection() {
                     <p className="font-mono text-[10px] text-[#16365C]/40 mb-1.5 tracking-wider">APR — DEC 2026</p>
                     <p className="font-semibold text-sm text-[#16365C] mb-2">Foundation</p>
                     <p className="font-mono text-xl font-bold text-[#16365C]">$0.7M</p>
-                    <p className="text-[10px] text-[#16365C]/50 mt-1.5 font-mono">2.5 FTE + reachback</p>
                   </div>
                 </div>
               </button>
@@ -94,8 +88,7 @@ export default function TimelineSection() {
                   <div className="bg-white border border-[#4A7C9B]/10 rounded-xl p-5 w-full group-hover:border-[#4A7C9B]/25 group-hover:shadow-lg transition-all">
                     <p className="font-mono text-[10px] text-[#4A7C9B]/40 mb-1.5 tracking-wider">JAN — DEC 2027</p>
                     <p className="font-semibold text-sm text-[#4A7C9B] mb-2">Scale</p>
-                    <p className="font-mono text-xl font-bold text-[#4A7C9B]">$2.8 — $3.8M</p>
-                    <p className="text-[10px] text-[#4A7C9B]/50 mt-1.5 font-mono">7-9 FTE</p>
+                    <p className="font-mono text-xl font-bold text-[#4A7C9B]">$3.2M — $4M</p>
                   </div>
                 </div>
               </button>
@@ -125,8 +118,7 @@ export default function TimelineSection() {
                   <div className="bg-white border border-[#2D6A6A]/10 rounded-xl p-5 w-full group-hover:border-[#2D6A6A]/25 group-hover:shadow-lg transition-all">
                     <p className="font-mono text-[10px] text-[#2D6A6A]/40 mb-1.5 tracking-wider">JAN — DEC 2028</p>
                     <p className="font-semibold text-sm text-[#2D6A6A] mb-2">Institutionalize</p>
-                    <p className="font-mono text-xl font-bold text-[#2D6A6A]">$3.8 — $5.0M</p>
-                    <p className="text-[10px] text-[#2D6A6A]/50 mt-1.5 font-mono">10-14 FTE</p>
+                    <p className="font-mono text-xl font-bold text-[#2D6A6A]">$4M — $6M</p>
                   </div>
                 </div>
               </button>
@@ -137,12 +129,12 @@ export default function TimelineSection() {
           <div className="mt-14 flex flex-wrap justify-center gap-10">
             <div className="text-center">
               <p className="font-mono text-[10px] text-[#16365C]/40 uppercase tracking-wider mb-1.5">Three-Year Total (Base)</p>
-              <p className="font-mono text-3xl font-bold text-[#16365C]">$7.3M</p>
+              <p className="font-mono text-3xl font-bold text-[#16365C]">$7.9M</p>
             </div>
             <div className="w-px h-12 bg-[#16365C]/10 hidden md:block" />
             <div className="text-center">
               <p className="font-mono text-[10px] text-[#16365C]/40 uppercase tracking-wider mb-1.5">Three-Year Total (Accelerated)</p>
-              <p className="font-mono text-3xl font-bold text-[#16365C]">$9.5M</p>
+              <p className="font-mono text-3xl font-bold text-[#16365C]">$10.7M</p>
             </div>
             <div className="w-px h-12 bg-[#16365C]/10 hidden md:block" />
             <div className="text-center">

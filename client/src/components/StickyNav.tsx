@@ -63,7 +63,7 @@ export default function StickyNav() {
               onClick={() => scrollTo('hero')}
               className={cn(
                 'flex items-center gap-2.5 transition-colors',
-                isScrolled ? 'text-[#16365C]' : 'text-white'
+                'text-[#16365C]'
               )}
             >
               <Landmark className="w-4 h-4 text-[#B8860B]" />
@@ -83,16 +83,10 @@ export default function StickyNav() {
                     className={cn(
                       'px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-200',
                       activeSection === section.id
-                        ? isScrolled
-                          ? 'bg-[#16365C] text-white'
-                          : 'bg-white/15 text-white'
-                        : isScrolled
-                          ? isGate
-                            ? 'text-[#B8860B]/70 hover:text-[#B8860B] hover:bg-[#B8860B]/5'
-                            : 'text-[#16365C]/60 hover:text-[#16365C] hover:bg-[#16365C]/5'
-                          : isGate
-                            ? 'text-[#B8860B]/60 hover:text-[#B8860B] hover:bg-[#B8860B]/10'
-                            : 'text-white/55 hover:text-white hover:bg-white/10'
+                        ? 'bg-[#16365C] text-white'
+                        : isGate
+                          ? 'text-[#B8860B]/70 hover:text-[#B8860B] hover:bg-[#B8860B]/5'
+                          : 'text-[#16365C]/60 hover:text-[#16365C] hover:bg-[#16365C]/5'
                     )}
                   >
                     {section.label}
@@ -106,7 +100,7 @@ export default function StickyNav() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className={cn(
                 'lg:hidden p-2 rounded-lg transition-colors',
-                isScrolled ? 'text-[#16365C]' : 'text-white'
+                'text-[#16365C]'
               )}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
