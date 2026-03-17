@@ -1,25 +1,47 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import StickyNav from '@/components/StickyNav';
+import HeroSection from '@/components/HeroSection';
+import ContextSection from '@/components/ContextSection';
+import ValueSection from '@/components/ValueSection';
+import TimelineSection from '@/components/TimelineSection';
+import YearPanel from '@/components/YearPanel';
+import GateSection from '@/components/GateSection';
+import RiskSection from '@/components/RiskSection';
+import ScenarioSection from '@/components/ScenarioSection';
+import Footer from '@/components/Footer';
+import { years, gates } from '@/lib/roadmapData';
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
+    <div className="min-h-screen">
+      <StickyNav />
+      <HeroSection />
+      <ContextSection />
+      <ValueSection />
+      <TimelineSection />
+
+      {/* Year 1 */}
+      <YearPanel year={years[0]} index={0} />
+
+      {/* Gate A */}
+      <GateSection gate={gates[0]} />
+
+      {/* Year 2 */}
+      <YearPanel year={years[1]} index={1} />
+
+      {/* Gate B */}
+      <GateSection gate={gates[1]} />
+
+      {/* Year 3 */}
+      <YearPanel year={years[2]} index={2} />
+
+      {/* Risks */}
+      <RiskSection />
+
+      {/* Scenarios */}
+      <ScenarioSection />
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
