@@ -125,7 +125,7 @@ export const years: YearData[] = [
         description: 'GenAI-powered summarization of inspection working papers, extracting key findings, deficiency patterns, and cross-engagement themes in minutes rather than days.',
         valueCase: 'Reduces inspection report preparation cycle time by an estimated 40-60%, freeing senior inspectors to focus on judgment-intensive analysis rather than document assembly.',
         dsReference: 'DS Tenet 3: Analytics and Reporting Modernization',
-        marketContext: 'All Big Four firms are deploying similar capabilities. Deloitte Omnia won AI Innovation of the Year 2024. KPMG is integrating AI agents into its Clara smart audit platform for 95,000 auditors.',
+        marketContext: 'All Big Four firms are deploying similar capabilities. Deloitte Omnia won AI Innovation Initiative of the Year at the 2024 International Accounting Forum and Awards. KPMG is integrating AI agents into its Clara smart audit platform for 95,000 auditors.',
       },
       {
         name: 'Regulatory Research Assistant',
@@ -210,7 +210,7 @@ export const years: YearData[] = [
         description: 'A GenAI-powered knowledge graph that maps relationships between firms, individuals, engagements, and prior enforcement actions, enabling investigators to identify patterns and connections that would otherwise require weeks of manual research.',
         valueCase: 'Accelerates enforcement case development timelines and strengthens the evidentiary foundation for Board-level enforcement decisions.',
         dsReference: 'DS Tenet 2: Enterprise Data Hub and Integration',
-        marketContext: 'Thomson Reuters reports that agentic AI is restructuring investigative workflows in regulatory agencies by automating complex processes and accelerating data analysis.',
+        marketContext: 'Thomson Reuters has documented how agentic AI is transforming investigative and regulatory compliance workflows by automating complex processes and accelerating data analysis across financial institutions and government agencies.',
       },
       {
         name: 'Automated Reporting Pipeline',

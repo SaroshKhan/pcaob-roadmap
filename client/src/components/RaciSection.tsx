@@ -45,7 +45,7 @@ const raciData: RaciRow[] = [
   {
     group: 'Strategic Governance',
     task: 'Chair Data Governance Council and set data policy',
-    values: { cio: 'A', cto: 'C', program: 'R', governance: 'R', divisions: 'C', security: 'C', budget: 'I', chair: 'I' },
+    values: { cio: 'A', cto: 'C', program: 'C', governance: 'R', divisions: 'C', security: 'C', budget: 'I', chair: 'I' },
   },
   {
     group: 'Strategic Governance',
@@ -62,7 +62,7 @@ const raciData: RaciRow[] = [
   {
     group: 'Data Platform & Architecture',
     task: 'Design and operate Enterprise Data Hub',
-    values: { cio: 'I', cto: 'A', program: 'C', governance: 'I', divisions: 'I', security: 'C', budget: 'I', chair: '' },
+    values: { cio: 'I', cto: 'A', program: 'R', governance: 'I', divisions: 'I', security: 'C', budget: 'I', chair: '' },
   },
   {
     group: 'Data Platform & Architecture',
@@ -99,7 +99,7 @@ const raciData: RaciRow[] = [
   {
     group: 'GenAI Capabilities',
     task: 'Measure and report GenAI value realization',
-    values: { cio: 'C', cto: 'I', program: 'A', governance: 'I', divisions: 'C', security: 'I', budget: 'C', chair: 'I' },
+    values: { cio: 'C', cto: 'I', program: 'A', governance: 'R', divisions: 'C', security: 'I', budget: 'C', chair: 'I' },
   },
 
   // Change Management & Adoption
@@ -145,17 +145,17 @@ const raciData: RaciRow[] = [
   {
     group: 'Security & Compliance',
     task: 'Review and approve GenAI tooling within security perimeter',
-    values: { cio: 'I', cto: 'C', program: 'I', governance: 'I', divisions: 'I', security: 'A', budget: 'I', chair: '' },
+    values: { cio: 'I', cto: 'R', program: 'I', governance: 'I', divisions: 'I', security: 'A', budget: 'I', chair: '' },
   },
   {
     group: 'Security & Compliance',
     task: 'Define data classification and access control policies',
-    values: { cio: 'C', cto: 'C', program: 'I', governance: 'C', divisions: 'I', security: 'A', budget: 'I', chair: '' },
+    values: { cio: 'C', cto: 'C', program: 'I', governance: 'R', divisions: 'I', security: 'A', budget: 'I', chair: '' },
   },
   {
     group: 'Security & Compliance',
     task: 'Conduct privacy and compliance assessments for AI use cases',
-    values: { cio: 'I', cto: 'C', program: 'C', governance: 'I', divisions: 'I', security: 'A', budget: 'I', chair: '' },
+    values: { cio: 'I', cto: 'C', program: 'R', governance: 'I', divisions: 'I', security: 'A', budget: 'I', chair: '' },
   },
 ];
 
