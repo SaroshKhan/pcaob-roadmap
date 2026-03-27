@@ -113,7 +113,7 @@ export default function HeroSection() {
                 icon: Database,
                 year: 'Year 1',
                 label: 'Foundation and First Wins',
-                window: 'April — December 2026',
+                window: 'Late April — December 2026',
                 budget: '$0.7M',
                 detail: 'Governance backbone, catalog activation, first GenAI champion workflows',
                 color: '#16365C',

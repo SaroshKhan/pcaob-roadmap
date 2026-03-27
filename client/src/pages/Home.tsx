@@ -1,6 +1,5 @@
 // PCAOB Enterprise Data Roadmap — Main Page
-// Sections: Hero, Value, Timeline, Year 1, Gate A, Year 2, Gate B, Year 3, Risks, Scenarios
-// Removed: ContextSection, Footer, CIO Script
+// Sections: Hero, Value, Timeline, Year 1, Gate A, Year 2, Gate B, Year 3, Risks, Scenarios, RACI
 
 import HeroSection from '@/components/HeroSection';
 import ValueSection from '@/components/ValueSection';
@@ -9,6 +8,7 @@ import YearPanel from '@/components/YearPanel';
 import GateSection from '@/components/GateSection';
 import RiskSection from '@/components/RiskSection';
 import ScenarioSection from '@/components/ScenarioSection';
+import RaciSection from '@/components/RaciSection';
 import StickyNav from '@/components/StickyNav';
 import { years, gates } from '@/lib/roadmapData';
 
@@ -26,6 +26,7 @@ export default function Home() {
       <YearPanel year={years[2]} index={2} />
       <RiskSection />
       <ScenarioSection />
+      <RaciSection />
     </div>
   );
 }

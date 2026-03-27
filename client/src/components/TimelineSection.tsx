@@ -56,7 +56,7 @@ export default function TimelineSection() {
                     <span className="text-white font-mono text-xs font-bold">Y1</span>
                   </div>
                   <div className="bg-white border border-[#16365C]/10 rounded-xl p-5 w-full group-hover:border-[#16365C]/25 group-hover:shadow-lg transition-all">
-                    <p className="font-mono text-[10px] text-[#16365C]/40 mb-1.5 tracking-wider">APR — DEC 2026</p>
+                    <p className="font-mono text-[10px] text-[#16365C]/40 mb-1.5 tracking-wider">LATE APR — DEC 2026</p>
                     <p className="font-semibold text-sm text-[#16365C] mb-2">Foundation</p>
                     <p className="font-mono text-xl font-bold text-[#16365C]">$0.7M</p>
                   </div>
