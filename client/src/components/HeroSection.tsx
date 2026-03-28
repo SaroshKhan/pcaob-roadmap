@@ -58,9 +58,9 @@ export default function HeroSection() {
               className="text-lg text-[#16365C]/70 font-serif leading-relaxed max-w-2xl mb-10 hero-fade-in"
               style={{ animationDelay: '0.3s' }}
             >
-              A structured, gate-controlled investment plan that transforms PCAOB data
-              capabilities from siloed and manual to integrated and AI-enabled — delivering
-              measurable mission value at every stage with no surprise funding requirements.
+              A structured, gate-controlled investment plan that equips PCAOB with
+              integrated, AI-enabled data capabilities — delivering measurable mission
+              value at every stage and full budget visibility from day one.
             </p>
 
             {/* No surprise ribbon */}
@@ -75,7 +75,7 @@ export default function HeroSection() {
                   <p className="text-[#16365C]/60 text-sm leading-relaxed">
                     Budget increases are gated by demonstrated value. Gate A (end of 2026) and
                     Gate B (end of 2027) provide structured decision points where leadership can
-                    scale, hold, or narrow the investment based on evidence, not projections.
+                    scale, hold, or narrow the investment based on demonstrated evidence.
                   </p>
                 </div>
               </div>

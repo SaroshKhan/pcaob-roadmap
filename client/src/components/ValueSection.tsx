@@ -35,7 +35,7 @@ export default function ValueSection() {
             Value Creation
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#16365C] tracking-tight mb-4">
-            From Manual Processes to AI-Enabled Oversight
+            AI-Enabled Oversight for Every Division
           </h2>
           <p className="text-[#16365C]/70 text-lg font-serif leading-relaxed">
             The three-year arc delivers compounding value. Each year builds on the
@@ -65,13 +65,13 @@ export default function ValueSection() {
                   Responsible AI Adoption as a Force Multiplier
                 </h3>
                 <p className="text-white/80 font-serif leading-relaxed mb-5">
-                  PCAOB staff currently spend significant time on document assembly, regulatory
-                  research, and manual data preparation. GenAI capabilities, deployed within a
-                  controlled governance framework, can reclaim that time for the judgment-intensive
-                  work that only experienced professionals can perform.
+                  GenAI capabilities, deployed within a controlled governance framework,
+                  accelerate document assembly, regulatory research, and data preparation —
+                  giving PCAOB staff more time for the judgment-intensive work where their
+                  expertise has the greatest impact.
                 </p>
                 <p className="text-white/80 font-serif leading-relaxed mb-6">
-                  This is not about replacing staff. It is about enabling each inspector, investigator,
+                  This program enables each inspector, investigator,
                   and analyst to operate with the data and analytical support that the complexity of
                   modern audit oversight demands.
                 </p>

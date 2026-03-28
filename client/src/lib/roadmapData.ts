@@ -102,7 +102,7 @@ export const years: YearData[] = [
     colorLight: '#E8EEF4',
     budget: { base: '$0.7M' },
     leadershipGets: [
-      'A unified data governance framework with enforceable cross-division decision rights that replaces ad hoc data requests with structured, repeatable access patterns.',
+      'A unified data governance framework with enforceable cross-division decision rights and structured, repeatable access patterns for every data request.',
       'Two to three GenAI champion workflows in production, each demonstrating measurable cycle-time reduction in inspection or enforcement support.',
       'Foundations of a change management program that prepares the Board and senior leadership for an AI-augmented, data-driven organizational transformation, including stakeholder mapping, readiness assessment, and a communications cadence.',
       'Three division champions recruited and actively engaged as early adopters, providing feedback loops and building peer-level advocacy for the data program across the organization.',
@@ -122,15 +122,15 @@ export const years: YearData[] = [
     genAICapabilities: [
       {
         name: 'Inspection Document Summarization',
-        description: 'GenAI-powered summarization of inspection working papers, extracting key findings, deficiency patterns, and cross-engagement themes in minutes rather than days.',
-        valueCase: 'Reduces inspection report preparation cycle time by an estimated 40-60%, freeing senior inspectors to focus on judgment-intensive analysis rather than document assembly.',
+        description: 'GenAI-powered summarization of inspection working papers, extracting key findings, deficiency patterns, and cross-engagement themes within minutes.',
+        valueCase: 'Reduces inspection report preparation cycle time by an estimated 40-60%, freeing senior inspectors to dedicate their expertise to judgment-intensive analysis.',
         dsReference: 'DS Tenet 3: Analytics and Reporting Modernization',
         marketContext: 'All Big Four firms are deploying similar capabilities. Deloitte Omnia won AI Innovation Initiative of the Year at the 2024 International Accounting Forum and Awards. KPMG is integrating AI agents into its Clara smart audit platform for 95,000 auditors.',
       },
       {
         name: 'Regulatory Research Assistant',
         description: 'A purpose-built GenAI assistant that searches across PCAOB standards, SEC guidance, and enforcement precedent to surface relevant authority for specific audit quality questions.',
-        valueCase: 'Enables staff to locate and synthesize regulatory precedent in hours rather than weeks, directly supporting the Board priority of faster, more consistent enforcement action.',
+        valueCase: 'Enables staff to locate and synthesize regulatory precedent within hours, directly supporting the Board priority of faster, more consistent enforcement action.',
         dsReference: 'DS Tenet 4: Workforce Enablement and Data Literacy',
         marketContext: 'The SEC created a dedicated AI Task Force in August 2025 led by Chief AI Officer Valerie Szczepanik to centralize AI adoption across the agency.',
       },
@@ -182,11 +182,11 @@ export const years: YearData[] = [
     colorLight: '#EAF1F5',
     budget: { base: '$3.5M', range: '$3.5M - $5M' },
     leadershipGets: [
-      'A production Enterprise Data Hub that consolidates the most critical inspection, enforcement, and registration data into a single governed platform. The current EDH has a technology foundation with BI/analytics capability and a Data Governance Council, but is not yet a consolidated production platform — Year 2 bridges that gap.',
+      'A production Enterprise Data Hub that consolidates the most critical inspection, enforcement, and registration data into a single governed platform. Year 2 builds on the existing EDH technology foundation, BI/analytics capability, and Data Governance Council to deliver a fully consolidated production platform.',
       'GenAI capabilities expanded from champion pilots to operational tools deployed across at least three divisions, enabling measurable productivity gains in inspection, enforcement, and registration workflows.',
       'An enterprise ingestion factory with standardized onboarding, monitoring, and reconciliation for new data sources.',
-      'Automated data pipelines that eliminate manual data preparation for the highest-priority recurring Board and Congressional reporting requirements, as identified through the Year 1 governance inventory.',
-      'A self-service analytics layer that enables division directors to answer their own data questions without submitting IT requests.',
+      'Automated data pipelines that streamline the highest-priority recurring Board and Congressional reporting requirements, as identified through the Year 1 governance inventory, into governed, repeatable workflows.',
+      'A self-service analytics layer that empowers division directors to answer their own data questions directly through governed, quality-assured interfaces.',
       'A value measurement layer with usage, throughput, and cycle-time reduction dashboards.',
       'A Gate B recommendation with quantified ROI evidence for the Year 3 investment.',
     ],
@@ -200,14 +200,14 @@ export const years: YearData[] = [
     genAICapabilities: [
       {
         name: 'Cross-Engagement Pattern Analysis',
-        description: 'GenAI-driven analysis that identifies systemic audit quality patterns across hundreds of inspection engagements, surfacing emerging risks that individual inspectors cannot see in isolation.',
-        valueCase: 'Transforms PCAOB from reactive (finding deficiencies one engagement at a time) to predictive (identifying systemic risks across the profession), directly advancing the investor protection mission.',
+        description: 'GenAI-driven analysis that identifies systemic audit quality patterns across hundreds of inspection engagements, surfacing emerging risks that become visible only at enterprise scale.',
+        valueCase: 'Equips PCAOB with predictive capability to identify systemic audit quality risks across the profession, directly advancing the investor protection mission.',
         dsReference: 'DS Tenet 3: Analytics and Reporting Modernization',
         marketContext: 'The 2024 aggregate deficiency rate dropped to 39% from 46%. Pattern analysis across engagements would enable PCAOB to identify the drivers behind this improvement and target persistent problem areas.',
       },
       {
         name: 'Enforcement Case Intelligence',
-        description: 'A GenAI-powered knowledge graph that maps relationships between firms, individuals, engagements, and prior enforcement actions, enabling investigators to identify patterns and connections that would otherwise require weeks of manual research.',
+        description: 'A GenAI-powered knowledge graph that maps relationships between firms, individuals, engagements, and prior enforcement actions, enabling investigators to identify patterns and connections across the full enforcement record within hours.',
         valueCase: 'Accelerates enforcement case development timelines and strengthens the evidentiary foundation for Board-level enforcement decisions.',
         dsReference: 'DS Tenet 2: Enterprise Data Hub and Integration',
         marketContext: 'Thomson Reuters has documented how agentic AI is transforming investigative and regulatory compliance workflows by automating complex processes and accelerating data analysis across financial institutions and government agencies.',
@@ -221,7 +221,7 @@ export const years: YearData[] = [
       {
         name: 'Natural Language Data Query',
         description: 'A self-service interface that allows non-technical staff to query the Enterprise Data Hub using natural language, with the system translating questions into structured queries and returning governed, validated results.',
-        valueCase: 'Democratizes data access across the organization, reducing the bottleneck on IT and analytics teams while ensuring all queries run against governed, quality-assured data.',
+        valueCase: 'Democratizes data access across the organization, empowering every division to query governed, quality-assured data independently and accelerating time-to-insight for mission-critical questions.',
         dsReference: 'DS Tenet 4: Workforce Enablement and Data Literacy',
       },
     ],
@@ -288,7 +288,7 @@ export const years: YearData[] = [
       {
         name: 'Agentic Workflow Orchestration',
         description: 'Multi-step AI agents that can execute complex analytical workflows autonomously, such as pulling data from multiple sources, running quality checks, performing analysis, and drafting preliminary findings for human review.',
-        valueCase: 'Represents the next evolution beyond single-task GenAI, enabling PCAOB to handle increasing oversight complexity without proportional increases in manual effort.',
+        valueCase: 'Represents the next evolution in GenAI maturity, enabling PCAOB to scale oversight capacity in proportion to growing market complexity through intelligent automation with human oversight.',
         dsReference: 'DS Tenet 2: Enterprise Data Hub and Integration',
         marketContext: 'Booz Allen Hamilton reports that agentic AI can "act, adapt, and collaborate to execute multistep processes across enterprise data and systems." KPMG is already deploying AI agents in its Clara platform for expense vouching and liability searches.',
       },
@@ -303,7 +303,7 @@ export const years: YearData[] = [
         description: 'AI tools that analyze public comments, academic research, international standards, and historical rulemaking to support the standard-setting process with comprehensive, structured evidence synthesis.',
         valueCase: 'Accelerates the standard-setting research phase and supports proposed standards being informed by a broader evidence base, strengthening the quality and defensibility of PCAOB rulemaking.',
         dsReference: 'DS Tenet 4: Workforce Enablement and Data Literacy',
-        marketContext: 'The profession is evolving rapidly. Predictive models and agentic workflows represent the next frontier in regulatory technology, positioning PCAOB to lead rather than follow.',
+        marketContext: 'The profession is evolving rapidly. Predictive models and agentic workflows represent the next frontier in regulatory technology, positioning PCAOB at the forefront of data-driven oversight.',
       },
     ],
     deliverables: [
@@ -342,7 +342,7 @@ export const gates: GateData[] = [
     id: 'gate-a',
     name: 'Gate A',
     timing: 'End of Year 1 (December 2026)',
-    description: 'Evidence-based decision point on whether to scale the program from foundation to full integration. This gate is designed so that no significant budget increase occurs without demonstrated value from the initial investment.',
+    description: 'Evidence-based decision point on whether to scale the program from foundation to full integration. This gate ensures that every budget increase is earned through demonstrated value from the initial investment.',
     metrics: [
       { name: 'GenAI champion workflows in production', target: '3 champion workflows with documented cycle-time reduction', status: 'not-started' },
       { name: 'Enterprise Data Catalog adoption', target: 'Monthly active users and repeat usage exceed minimums', status: 'not-started' },
@@ -382,7 +382,7 @@ export const risks: RiskItem[] = [
     likelihood: 4,
     impact: 5,
     category: 'Financial',
-    mitigation: 'The roadmap is structured around decision gates that allow scaling, holding, or narrowing at each stage. The three-year envelope is published to prevent surprise requests. A base-case scenario delivers value within the existing budget envelope. All investments are framed in terms of cost avoidance and mission efficiency.',
+    mitigation: 'The roadmap is structured around decision gates that allow scaling, holding, or narrowing at each stage. The three-year envelope is published to provide full budget visibility from day one. A base-case scenario delivers value within the existing budget envelope. All investments are framed in terms of cost avoidance and mission efficiency.',
     owner: 'CIO and Budget Office',
   },
   {
@@ -400,7 +400,7 @@ export const risks: RiskItem[] = [
     likelihood: 3,
     impact: 4,
     category: 'Technical',
-    mitigation: 'The default approach is to use the existing stack wherever possible. Early technical feasibility assessments for all GenAI tooling within the PCAOB security perimeter are planned. Approved cloud and on-premises options will be identified in the first 90 days. Fallback approaches for each capability that do not depend on a single vendor or platform are maintained.',
+    mitigation: 'The default approach is to use the existing stack wherever possible. Early technical feasibility assessments for all GenAI tooling within the PCAOB security perimeter are planned. Approved cloud and on-premises options will be identified in the first 90 days. Fallback approaches for each capability ensure flexibility across vendors and platforms.',
     owner: 'CTO and Security Team',
   },
   {
@@ -448,7 +448,7 @@ export const scenarios: ScenarioData[] = [
   },
   {
     name: 'Accelerated Adoption',
-    description: 'Expands the scope to include additional GenAI use cases and faster platform buildout. Requires explicit gate approval and additional budget authorization. Delivers greater mission impact sooner but at higher investment levels.',
+    description: 'Expands the scope to include additional GenAI use cases and faster platform buildout. Requires explicit gate approval and additional budget authorization. Delivers greater mission impact sooner at higher investment levels.',
     years: [
       { year: 2026, budget: 0.7, genAIMaturity: 'Pilot' },
       { year: 2027, budget: 5.0, genAIMaturity: 'Advanced' },

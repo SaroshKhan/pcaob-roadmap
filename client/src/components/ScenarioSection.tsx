@@ -155,8 +155,8 @@ export default function ScenarioSection() {
                       <p className="text-sm font-semibold mb-1">GenAI Reaches Operational Scale in 2027</p>
                       <p className="text-xs text-white/60 leading-relaxed">
                         The additional investment in Year 2 expands GenAI from pilot workflows to
-                        operational tools across three or more divisions by mid-2027, rather than
-                        end-of-year. Cross-engagement pattern analysis and enforcement
+                        operational tools across three or more divisions by mid-2027.
+                        Cross-engagement pattern analysis and enforcement
                         case intelligence become available six months earlier.
                       </p>
                     </div>
@@ -167,7 +167,7 @@ export default function ScenarioSection() {
                       <p className="text-sm font-semibold mb-1">Predictive Risk Modeling Arrives in Early 2028</p>
                       <p className="text-xs text-white/60 leading-relaxed">
                         The Year 3 accelerated budget enables predictive audit risk modeling to
-                        reach production in Q1 2028 rather than Q3, giving PCAOB a full inspection
+                        reach production in Q1 2028, giving PCAOB a full inspection
                         cycle of data-driven selection before the 2028 annual report.
                       </p>
                     </div>
